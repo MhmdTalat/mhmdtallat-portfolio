@@ -3,24 +3,25 @@ import { Badge } from "@/components/ui/badge";
 
 const Skills = () => {
   const skills = [
-    { name: "Node.js", level: 90 },
-    { name: "Python", level: 85 },
-    { name: "JavaScript", level: 90 },
-    { name: "TypeScript", level: 80 },
-    { name: "Express.js", level: 85 },
-    { name: "Machine Learning", level: 80 },
+    { name: "Python", level: 90 },
+    { name: "Django", level: 85 },
+    { name: "FastAPI", level: 85 },
+    { name: "Flask", level: 80 },
+    { name: "JavaScript", level: 80 },
+    { name: "TypeScript", level: 75 },
+    { name: "Machine Learning", level: 85 },
     { name: "MySQL", level: 85 },
     { name: "MongoDB", level: 80 },
-    { name: "React", level: 75 },
-    { name: "AI Integration", level: 85 }
+    { name: "AI Integration", level: 90 }
   ];
 
   const technologies = [
-    "Node.js", "Python", "JavaScript", "TypeScript", "Express.js", 
-    "FastAPI", "Machine Learning", "Natural Language Processing", "LLMs", "OpenAI API",
+    "Python", "Django", "FastAPI", "Flask", "JavaScript", "TypeScript", 
+    "Django REST Framework", "Machine Learning", "Natural Language Processing", "LLMs", "OpenAI API",
     "MySQL", "MongoDB", "PostgreSQL", "REST APIs", "GraphQL",
     "Docker", "Git", "GitHub", "AWS", "Google Cloud",
-    "TensorFlow", "PyTorch", "Scikit-learn", "Pandas", "NumPy"
+    "TensorFlow", "PyTorch", "Scikit-learn", "Pandas", "NumPy",
+    "Celery", "Redis", "Nginx", "Gunicorn", "SQLAlchemy"
   ];
 
   return (

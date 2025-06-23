@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Github, Linkedin, Mail, ChevronDown } from "lucide-react";
 
@@ -26,8 +25,8 @@ const Hero = () => {
           </p>
           
           <p className="text-lg text-gray-500 mb-10 max-w-2xl mx-auto">
-            Passionate about building intelligent backend systems and AI-powered solutions. 
-            Experienced in Node.js, Python, and cutting-edge AI technologies.
+            Passionate about building intelligent backend systems with Django, FastAPI, and Flask. 
+            Experienced in Python development and cutting-edge AI technologies.
           </p>
           
           <div className="flex justify-center gap-4 mb-10">
