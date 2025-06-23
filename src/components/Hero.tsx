@@ -22,12 +22,12 @@ const Hero = () => {
           </h1>
           
           <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto">
-            Full Stack Developer & Mobile App Developer
+            Backend Engineer & AI Specialist
           </p>
           
           <p className="text-lg text-gray-500 mb-10 max-w-2xl mx-auto">
-            Passionate about creating innovative solutions with modern technologies. 
-            Experienced in React, Node.js, and mobile development.
+            Passionate about building intelligent backend systems and AI-powered solutions. 
+            Experienced in Node.js, Python, and cutting-edge AI technologies.
           </p>
           
           <div className="flex justify-center gap-4 mb-10">

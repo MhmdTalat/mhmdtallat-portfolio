@@ -7,36 +7,36 @@ import { Github, ExternalLink } from "lucide-react";
 const Projects = () => {
   const projects = [
     {
-      title: "E-Commerce Platform",
-      description: "A full-stack e-commerce solution built with React and Node.js, featuring user authentication, payment integration, and admin dashboard.",
-      technologies: ["React", "Node.js", "Express", "MySQL", "Stripe"],
+      title: "Tailor-Job Resume",
+      description: "An AI-powered application that automatically customizes resumes for specific job descriptions using machine learning algorithms to match skills and keywords.",
+      technologies: ["Python", "OpenAI API", "NLP", "Machine Learning", "FastAPI", "React"],
       githubUrl: "https://github.com/mahmoud6171",
       liveUrl: "#",
-      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=800&q=80"
+      image: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?auto=format&fit=crop&w=800&q=80"
     },
     {
-      title: "Task Management App",
-      description: "A React Native mobile application for task management with real-time synchronization and offline capabilities.",
-      technologies: ["React Native", "Redux", "Firebase", "AsyncStorage"],
+      title: "Chat with Your PDF",
+      description: "An intelligent document analysis system that allows users to chat with PDF documents using natural language processing and AI to extract insights and answer questions.",
+      technologies: ["Python", "LangChain", "OpenAI API", "PDF Processing", "NLP", "Streamlit"],
       githubUrl: "https://github.com/mahmoud6171",
       liveUrl: "#",
-      image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?auto=format&fit=crop&w=800&q=80"
+      image: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?auto=format&fit=crop&w=800&q=80"
     },
     {
-      title: "Weather Dashboard",
-      description: "A responsive web application that displays weather information with beautiful charts and forecasts using external APIs.",
-      technologies: ["React", "TypeScript", "Chart.js", "Weather API"],
+      title: "AI-Powered Backend API",
+      description: "A comprehensive backend system integrating multiple AI services including text analysis, sentiment detection, and automated content generation with robust authentication and rate limiting.",
+      technologies: ["Node.js", "Express", "MongoDB", "OpenAI API", "JWT", "Docker"],
       githubUrl: "https://github.com/mahmoud6171",
       liveUrl: "#",
-      image: "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?auto=format&fit=crop&w=800&q=80"
+      image: "https://images.unsplash.com/photo-1518186285589-2f7649de83e0?auto=format&fit=crop&w=800&q=80"
     },
     {
-      title: "Social Media Dashboard",
-      description: "A comprehensive dashboard for managing multiple social media accounts with analytics and scheduling features.",
-      technologies: ["React", "Node.js", "MongoDB", "Socket.io"],
+      title: "Intelligent Data Processing Pipeline",
+      description: "A scalable backend system for processing large datasets with machine learning models, featuring real-time analytics and automated reporting capabilities.",
+      technologies: ["Python", "FastAPI", "PostgreSQL", "Redis", "Celery", "Docker", "AWS"],
       githubUrl: "https://github.com/mahmoud6171",
       liveUrl: "#",
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80"
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80"
     }
   ];
 
@@ -44,9 +44,9 @@ const Projects = () => {
     <section id="projects" className="py-20 bg-white">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Featured Projects</h2>
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">Featured AI & Backend Projects</h2>
           <p className="text-xl text-gray-600">
-            Here are some of my recent projects that showcase my skills
+            Here are some of my recent projects showcasing AI integration and backend engineering
           </p>
         </div>
         
