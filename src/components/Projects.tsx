@@ -23,20 +23,36 @@ const Projects = () => {
       image: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?auto=format&fit=crop&w=800&q=80"
     },
     {
-      title: "AI-Powered Backend API",
-      description: "A comprehensive backend system integrating multiple AI services including text analysis, sentiment detection, and automated content generation with robust authentication and rate limiting.",
-      technologies: ["Node.js", "Express", "MongoDB", "OpenAI API", "JWT", "Docker"],
+      title: "E-commerce Platform",
+      description: "A full-featured e-commerce application built with Django, featuring user authentication, product management, shopping cart, payment integration, and order tracking.",
+      technologies: ["Django", "Python", "PostgreSQL", "Django REST Framework", "HTML/CSS", "JavaScript"],
       githubUrl: "https://github.com/mahmoud6171",
       liveUrl: "#",
-      image: "https://images.unsplash.com/photo-1518186285589-2f7649de83e0?auto=format&fit=crop&w=800&q=80"
+      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=800&q=80"
     },
     {
-      title: "Intelligent Data Processing Pipeline",
-      description: "A scalable backend system for processing large datasets with machine learning models, featuring real-time analytics and automated reporting capabilities.",
-      technologies: ["Python", "FastAPI", "PostgreSQL", "Redis", "Celery", "Docker", "AWS"],
+      title: "Todo App with FastAPI",
+      description: "A modern todo application built with FastAPI backend, featuring user authentication, task management, categories, and real-time updates with clean API design.",
+      technologies: ["FastAPI", "Python", "SQLAlchemy", "PostgreSQL", "JWT", "Pydantic"],
+      githubUrl: "https://github.com/mahmoud6171",
+      liveUrl: "#",
+      image: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      title: "Mini-RAG System",
+      description: "A Retrieval-Augmented Generation (RAG) base project demonstrating how to handle PDFs and documents from upload to production, with vector database integration for intelligent document querying.",
+      technologies: ["Python", "LangChain", "Vector DB", "FAISS", "OpenAI API", "PDF Processing", "RAG"],
       githubUrl: "https://github.com/mahmoud6171",
       liveUrl: "#",
       image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      title: "AI-Powered Backend API",
+      description: "A comprehensive backend system integrating multiple AI services including text analysis, sentiment detection, and automated content generation with robust authentication and rate limiting.",
+      technologies: ["FastAPI", "Python", "MongoDB", "OpenAI API", "JWT", "Docker"],
+      githubUrl: "https://github.com/mahmoud6171",
+      liveUrl: "#",
+      image: "https://images.unsplash.com/photo-1518186285589-2f7649de83e0?auto=format&fit=crop&w=800&q=80"
     }
   ];
 
@@ -46,7 +62,7 @@ const Projects = () => {
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">Featured AI & Backend Projects</h2>
           <p className="text-xl text-gray-600">
-            Here are some of my recent projects showcasing AI integration and backend engineering
+            Here are some of my recent projects showcasing AI integration, backend engineering, and full-stack development
           </p>
         </div>
         

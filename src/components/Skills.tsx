@@ -10,6 +10,8 @@ const Skills = () => {
     { name: "JavaScript", level: 80 },
     { name: "TypeScript", level: 75 },
     { name: "Machine Learning", level: 85 },
+    { name: "Computer Vision", level: 80 },
+    { name: "LLMs", level: 85 },
     { name: "MySQL", level: 85 },
     { name: "MongoDB", level: 80 },
     { name: "AI Integration", level: 90 }
@@ -17,11 +19,12 @@ const Skills = () => {
 
   const technologies = [
     "Python", "Django", "FastAPI", "Flask", "JavaScript", "TypeScript", 
-    "Django REST Framework", "Machine Learning", "Natural Language Processing", "LLMs", "OpenAI API",
+    "Django REST Framework", "Machine Learning", "Computer Vision", "LLMs", "OpenAI API",
+    "Natural Language Processing", "Vector Databases", "RAG Systems",
     "MySQL", "MongoDB", "PostgreSQL", "REST APIs", "GraphQL",
     "Docker", "Git", "GitHub", "AWS", "Google Cloud",
-    "TensorFlow", "PyTorch", "Scikit-learn", "Pandas", "NumPy",
-    "Celery", "Redis", "Nginx", "Gunicorn", "SQLAlchemy"
+    "TensorFlow", "PyTorch", "Scikit-learn", "Pandas", "NumPy", "OpenCV",
+    "Celery", "Redis", "Nginx", "Gunicorn", "SQLAlchemy", "Chroma", "FAISS"
   ];
 
   return (
@@ -30,7 +33,7 @@ const Skills = () => {
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">Skills & Technologies</h2>
           <p className="text-xl text-gray-600">
-            Here are the technologies and tools I work with in Backend and AI Engineering
+            Here are the technologies and tools I work with in Backend, AI Engineering, Computer Vision, and LLMs
           </p>
         </div>
         
