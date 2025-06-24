@@ -33,18 +33,18 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+    <section id="contact" className="py-20 bg-gradient-to-br from-gray-900 to-blue-900">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold bg-gradient-to-r from-gray-900 to-blue-900 bg-clip-text text-transparent mb-4">Get In Touch</h2>
-          <p className="text-xl text-gray-600">
+        <div className="text-center mb-16 scroll-reveal">
+          <h2 className="text-4xl font-bold bg-gradient-to-r from-gray-100 to-blue-300 bg-clip-text text-transparent mb-4">Get In Touch</h2>
+          <p className="text-xl text-gray-300">
             Let's discuss your next project or collaboration opportunity
           </p>
         </div>
         
         <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
-          <div>
-            <h3 className="text-2xl font-semibold mb-6">Contact Information</h3>
+          <div className="scroll-reveal-left">
+            <h3 className="text-2xl font-semibold mb-6 text-gray-100">Contact Information</h3>
             
             <div className="space-y-6">
               <div className="flex items-center gap-4">
@@ -52,8 +52,8 @@ const Contact = () => {
                   <Mail className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <h4 className="font-medium">Email</h4>
-                  <p className="text-gray-600">mahmoud.said5456@gmail.com</p>
+                  <h4 className="font-medium text-gray-200">Email</h4>
+                  <p className="text-gray-400">mahmoud.said5456@gmail.com</p>
                 </div>
               </div>
               
@@ -62,8 +62,8 @@ const Contact = () => {
                   <Phone className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <h4 className="font-medium">Phone</h4>
-                  <p className="text-gray-600">01557300816</p>
+                  <h4 className="font-medium text-gray-200">Phone</h4>
+                  <p className="text-gray-400">01557300816</p>
                 </div>
               </div>
               
@@ -72,14 +72,14 @@ const Contact = () => {
                   <MapPin className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <h4 className="font-medium">Location</h4>
-                  <p className="text-gray-600">Cairo, Egypt</p>
+                  <h4 className="font-medium text-gray-200">Location</h4>
+                  <p className="text-gray-400">Cairo, Egypt</p>
                 </div>
               </div>
             </div>
             
             <div className="mt-8">
-              <h4 className="font-medium mb-4">Follow Me</h4>
+              <h4 className="font-medium mb-4 text-gray-200">Follow Me</h4>
               <div className="flex gap-4">
                 <a 
                   href="https://www.linkedin.com/in/mahmoud-saeed-0971aa222/" 
@@ -93,7 +93,7 @@ const Contact = () => {
                   href="https://github.com/mahmoud6171" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="w-10 h-10 bg-gradient-to-r from-gray-800 to-gray-900 rounded-lg flex items-center justify-center text-white hover:shadow-lg transform hover:scale-105 transition-all duration-300"
+                  className="w-10 h-10 bg-gradient-to-r from-gray-700 to-gray-800 rounded-lg flex items-center justify-center text-white hover:shadow-lg transform hover:scale-105 transition-all duration-300"
                 >
                   <Github size={20} />
                 </a>
@@ -101,9 +101,9 @@ const Contact = () => {
             </div>
           </div>
           
-          <Card className="shadow-xl border-0 bg-white/70 backdrop-blur-sm">
+          <Card className="scroll-reveal-right shadow-xl border-gray-700 bg-gray-800/70 backdrop-blur-sm">
             <CardHeader>
-              <CardTitle className="text-2xl bg-gradient-to-r from-gray-900 to-blue-900 bg-clip-text text-transparent">Send Me a Message</CardTitle>
+              <CardTitle className="text-2xl bg-gradient-to-r from-gray-100 to-blue-300 bg-clip-text text-transparent">Send Me a Message</CardTitle>
             </CardHeader>
             <CardContent>
               <form onSubmit={handleSubmit} className="space-y-6">
@@ -114,7 +114,7 @@ const Contact = () => {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="border-2 focus:border-blue-500 transition-colors"
+                    className="border-2 border-gray-600 bg-gray-700 text-gray-100 placeholder-gray-400 focus:border-blue-500 transition-colors"
                   />
                 </div>
                 
@@ -126,7 +126,7 @@ const Contact = () => {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="border-2 focus:border-blue-500 transition-colors"
+                    className="border-2 border-gray-600 bg-gray-700 text-gray-100 placeholder-gray-400 focus:border-blue-500 transition-colors"
                   />
                 </div>
                 
@@ -138,7 +138,7 @@ const Contact = () => {
                     value={formData.message}
                     onChange={handleChange}
                     required
-                    className="border-2 focus:border-blue-500 transition-colors"
+                    className="border-2 border-gray-600 bg-gray-700 text-gray-100 placeholder-gray-400 focus:border-blue-500 transition-colors"
                   />
                 </div>
                 

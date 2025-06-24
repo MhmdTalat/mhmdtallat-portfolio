@@ -1,25 +1,44 @@
 
 import { Button } from "@/components/ui/button";
 import { Github, Linkedin, Mail, ChevronDown } from "lucide-react";
+import { useEffect } from "react";
 
 const Hero = () => {
   const scrollToSection = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
   };
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    const elements = document.querySelectorAll('.scroll-reveal, .scroll-reveal-left, .scroll-reveal-right, .scroll-reveal-scale');
+    elements.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 relative overflow-hidden">
+    <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 via-blue-900 to-indigo-900 relative overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-full blur-3xl"></div>
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-tr from-indigo-400/20 to-cyan-400/20 rounded-full blur-3xl"></div>
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-full blur-3xl"></div>
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-tr from-indigo-500/20 to-cyan-500/20 rounded-full blur-3xl"></div>
       </div>
 
       <div className="container mx-auto px-6 text-center relative z-10">
-        <div className="animate-fade-in">
+        <div className="scroll-reveal">
           <div className="mb-8">
-            <div className="w-40 h-40 mx-auto mb-6 rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 p-1 shadow-2xl hover:shadow-blue-500/25 transition-all duration-300">
-              <div className="w-full h-full rounded-full overflow-hidden bg-white flex items-center justify-center">
+            <div className="w-40 h-40 mx-auto mb-6 rounded-full bg-gradient-to-r from-blue-500 to-indigo-500 p-1 shadow-2xl hover:shadow-blue-500/25 transition-all duration-300">
+              <div className="w-full h-full rounded-full overflow-hidden bg-gray-800 flex items-center justify-center">
                 {/* Replace this src with your actual image URL */}
                 <img 
                   src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&h=300&q=80" 
@@ -30,15 +49,15 @@ const Hero = () => {
             </div>
           </div>
           
-          <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-gray-900 via-blue-900 to-indigo-900 bg-clip-text text-transparent mb-6">
+          <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-gray-100 via-blue-300 to-indigo-300 bg-clip-text text-transparent mb-6">
             Mahmoud Saeed
           </h1>
           
-          <p className="text-xl md:text-2xl text-gray-700 mb-8 max-w-3xl mx-auto font-medium">
+          <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto font-medium">
             Backend Engineer & AI Specialist
           </p>
           
-          <p className="text-lg text-gray-600 mb-10 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-lg text-gray-400 mb-10 max-w-2xl mx-auto leading-relaxed">
             Passionate about building intelligent backend systems with Django, FastAPI, and Flask. 
             Experienced in Python development and cutting-edge AI technologies including Computer Vision and LLMs.
           </p>
@@ -53,7 +72,7 @@ const Hero = () => {
             <Button 
               variant="outline" 
               onClick={() => scrollToSection('contact')}
-              className="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-3 text-lg shadow-lg transition-all duration-300 transform hover:scale-105"
+              className="border-2 border-blue-500 text-blue-400 hover:bg-blue-600 hover:text-white px-8 py-3 text-lg shadow-lg transition-all duration-300 transform hover:scale-105"
             >
               Get In Touch
             </Button>
@@ -64,7 +83,7 @@ const Hero = () => {
               href="https://www.linkedin.com/in/mahmoud-saeed-0971aa222/" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-gray-600 hover:text-blue-600 transition-all duration-300 transform hover:scale-110"
+              className="text-gray-400 hover:text-blue-400 transition-all duration-300 transform hover:scale-110"
             >
               <Linkedin size={32} />
             </a>
@@ -72,13 +91,13 @@ const Hero = () => {
               href="https://github.com/mahmoud6171" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-gray-600 hover:text-gray-900 transition-all duration-300 transform hover:scale-110"
+              className="text-gray-400 hover:text-gray-200 transition-all duration-300 transform hover:scale-110"
             >
               <Github size={32} />
             </a>
             <a 
               href="mailto:mahmoud.said5456@gmail.com"
-              className="text-gray-600 hover:text-blue-600 transition-all duration-300 transform hover:scale-110"
+              className="text-gray-400 hover:text-blue-400 transition-all duration-300 transform hover:scale-110"
             >
               <Mail size={32} />
             </a>
@@ -89,7 +108,7 @@ const Hero = () => {
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
         <ChevronDown 
           size={32} 
-          className="text-gray-500 cursor-pointer hover:text-blue-600 transition-colors duration-300"
+          className="text-gray-400 cursor-pointer hover:text-blue-400 transition-colors duration-300"
           onClick={() => scrollToSection('about')}
         />
       </div>

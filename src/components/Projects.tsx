@@ -57,18 +57,18 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="py-20 bg-white">
+    <section id="projects" className="py-20 bg-gradient-to-br from-gray-800 to-gray-900">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Featured AI & Backend Projects</h2>
-          <p className="text-xl text-gray-600">
+        <div className="text-center mb-16 scroll-reveal">
+          <h2 className="text-4xl font-bold bg-gradient-to-r from-gray-100 to-blue-300 bg-clip-text text-transparent mb-4">Featured AI & Backend Projects</h2>
+          <p className="text-xl text-gray-300">
             Here are some of my recent projects showcasing AI integration, backend engineering, and full-stack development
           </p>
         </div>
         
         <div className="grid md:grid-cols-2 gap-8">
           {projects.map((project, index) => (
-            <Card key={index} className="hover:shadow-xl transition-shadow overflow-hidden">
+            <Card key={index} className="scroll-reveal-scale hover:shadow-xl transition-shadow overflow-hidden border-gray-700 bg-gray-800/80 backdrop-blur-sm" style={{animationDelay: `${index * 0.1}s`}}>
               <div className="aspect-video overflow-hidden">
                 <img 
                   src={project.image} 
@@ -77,27 +77,27 @@ const Projects = () => {
                 />
               </div>
               <CardHeader>
-                <CardTitle className="text-xl">{project.title}</CardTitle>
+                <CardTitle className="text-xl text-gray-100">{project.title}</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-gray-600 mb-4">{project.description}</p>
+                <p className="text-gray-300 mb-4">{project.description}</p>
                 
                 <div className="flex flex-wrap gap-2 mb-6">
                   {project.technologies.map((tech) => (
-                    <Badge key={tech} variant="secondary" className="text-xs">
+                    <Badge key={tech} variant="secondary" className="text-xs bg-gray-700 text-gray-200 border-gray-600">
                       {tech}
                     </Badge>
                   ))}
                 </div>
                 
                 <div className="flex gap-3">
-                  <Button variant="outline" size="sm" asChild>
+                  <Button variant="outline" size="sm" asChild className="border-gray-600 text-gray-200 hover:bg-gray-700">
                     <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
                       <Github size={16} className="mr-2" />
                       Code
                     </a>
                   </Button>
-                  <Button size="sm" asChild>
+                  <Button size="sm" asChild className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700">
                     <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
                       <ExternalLink size={16} className="mr-2" />
                       Live Demo
@@ -109,8 +109,8 @@ const Projects = () => {
           ))}
         </div>
         
-        <div className="text-center mt-12">
-          <Button variant="outline" size="lg" asChild>
+        <div className="text-center mt-12 scroll-reveal">
+          <Button variant="outline" size="lg" asChild className="border-gray-600 text-gray-200 hover:bg-gray-700">
             <a href="https://github.com/mahmoud6171" target="_blank" rel="noopener noreferrer">
               <Github size={20} className="mr-2" />
               View All Projects on GitHub
