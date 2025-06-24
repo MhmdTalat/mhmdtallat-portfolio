@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Github, Linkedin, Mail, ChevronDown } from "lucide-react";
 import { useEffect } from "react";
@@ -39,9 +38,8 @@ const Hero = () => {
           <div className="mb-8">
             <div className="w-40 h-40 mx-auto mb-6 rounded-full bg-gradient-to-r from-blue-500 to-indigo-500 p-1 shadow-2xl hover:shadow-blue-500/25 transition-all duration-300">
               <div className="w-full h-full rounded-full overflow-hidden bg-gray-800 flex items-center justify-center">
-                {/* Replace this src with your actual image URL */}
                 <img 
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&h=300&q=80" 
+                  src="/lovable-uploads/8ea931bc-2c56-469a-b6f3-6281bf29f2a8.png" 
                   alt="Mahmoud Saeed" 
                   className="w-full h-full object-cover rounded-full"
                 />
