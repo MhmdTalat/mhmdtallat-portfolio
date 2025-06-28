@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Github, Linkedin, Mail, ChevronDown } from "lucide-react";
 import { useEffect } from "react";
@@ -40,7 +41,7 @@ const Hero = () => {
               <div className="w-full h-full rounded-full overflow-hidden bg-gray-800 flex items-center justify-center">
                 <img 
                   src="/lovable-uploads/8ea931bc-2c56-469a-b6f3-6281bf29f2a8.png" 
-                  alt="Mahmoud Saeed" 
+                  alt="Muhammed Tallat Hassan Ahmed" 
                   className="w-full h-full object-cover rounded-full"
                 />
               </div>
@@ -48,16 +49,16 @@ const Hero = () => {
           </div>
           
           <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-gray-100 via-blue-300 to-indigo-300 bg-clip-text text-transparent mb-6">
-            Mahmoud Saeed
+            Muhammed Tallat Hassan Ahmed
           </h1>
           
           <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto font-medium">
-            Backend Engineer & AI Specialist
+            .NET Full-Stack Developer
           </p>
           
           <p className="text-lg text-gray-400 mb-10 max-w-2xl mx-auto leading-relaxed">
-            Passionate about building intelligent backend systems with Django, FastAPI, and Flask. 
-            Experienced in Python development and cutting-edge AI technologies including Computer Vision and LLMs.
+            Motivated .NET Developer with two years of experience in full-stack development. 
+            Specialized in building scalable, efficient, and secure applications using ASP.NET Core, MVC, and modern web technologies.
           </p>
           
           <div className="flex justify-center gap-4 mb-10">
@@ -78,7 +79,7 @@ const Hero = () => {
           
           <div className="flex justify-center gap-6">
             <a 
-              href="https://www.linkedin.com/in/mahmoud-saeed-0971aa222/" 
+              href="https://linkedin.com/in/yourprofile" 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-blue-400 transition-all duration-300 transform hover:scale-110"
@@ -86,7 +87,7 @@ const Hero = () => {
               <Linkedin size={32} />
             </a>
             <a 
-              href="https://github.com/mahmoud6171" 
+              href="https://github.com/yourusername" 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-gray-200 transition-all duration-300 transform hover:scale-110"
@@ -94,7 +95,7 @@ const Hero = () => {
               <Github size={32} />
             </a>
             <a 
-              href="mailto:mahmoud.said5456@gmail.com"
+              href="mailto:muhammedtallat4@gmail.com"
               className="text-gray-400 hover:text-blue-400 transition-all duration-300 transform hover:scale-110"
             >
               <Mail size={32} />

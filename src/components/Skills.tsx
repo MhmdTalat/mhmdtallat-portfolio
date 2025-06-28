@@ -3,28 +3,29 @@ import { Badge } from "@/components/ui/badge";
 
 const Skills = () => {
   const skills = [
-    { name: "Python", level: 90 },
-    { name: "Django", level: 85 },
-    { name: "FastAPI", level: 85 },
-    { name: "Flask", level: 80 },
+    { name: "C#", level: 90 },
+    { name: "ASP.NET Core", level: 85 },
+    { name: "Entity Framework", level: 85 },
+    { name: "SQL Server", level: 80 },
     { name: "JavaScript", level: 80 },
-    { name: "TypeScript", level: 75 },
-    { name: "Machine Learning", level: 85 },
-    { name: "Computer Vision", level: 80 },
-    { name: "LLMs", level: 85 },
-    { name: "MySQL", level: 85 },
-    { name: "MongoDB", level: 80 },
-    { name: "AI Integration", level: 90 }
+    { name: "Web API", level: 85 },
+    { name: "MVC", level: 80 },
+    { name: "HTML5/CSS3", level: 85 },
+    { name: "Bootstrap", level: 75 },
+    { name: "jQuery", level: 75 },
+    { name: "LINQ", level: 80 },
+    { name: "Git/GitHub", level: 85 }
   ];
 
   const technologies = [
-    "Python", "Django", "FastAPI", "Flask", "JavaScript", "TypeScript", 
-    "Django REST Framework", "Machine Learning", "Computer Vision", "LLMs", "OpenAI API",
-    "Natural Language Processing", "Vector Databases", "RAG Systems",
-    "MySQL", "MongoDB", "PostgreSQL", "REST APIs", "GraphQL",
-    "Docker", "Git", "GitHub", "AWS", "Google Cloud",
-    "TensorFlow", "PyTorch", "Scikit-learn", "Pandas", "NumPy", "OpenCV",
-    "Celery", "Redis", "Nginx", "Gunicorn", "SQLAlchemy", "Chroma", "FAISS"
+    "C#", "ASP.NET Core", "ASP.NET MVC", "Web API", ".NET Framework", ".NET Core",
+    "Entity Framework Core", "ADO.NET", "LINQ", "SQL Server", "PostgreSQL",
+    "HTML5", "CSS3", "Bootstrap", "JavaScript", "jQuery", "JSON", "XML",
+    "Visual Studio", "Git", "GitHub", "Swagger", "JWT Authentication",
+    "OOP", "Data Structures", "Algorithms", "Microservices", "REST APIs",
+    "Computer Vision", "OpenCV", "Python", "NumPy", "Matplotlib", "PIL",
+    "QRCoder", "iTextSharp", "EPPlus", "Open XML SDK", "Odoo ERP",
+    "Machine Learning", "TensorFlow", "Deep Learning", "Neural Networks"
   ];
 
   return (
@@ -33,7 +34,7 @@ const Skills = () => {
         <div className="text-center mb-16 scroll-reveal">
           <h2 className="text-4xl font-bold bg-gradient-to-r from-gray-100 to-blue-300 bg-clip-text text-transparent mb-4">Skills & Technologies</h2>
           <p className="text-xl text-gray-300">
-            Here are the technologies and tools I work with in Backend, AI Engineering, Computer Vision, and LLMs
+            Here are the technologies and tools I work with in .NET Development, Full-Stack Development, and Computer Vision
           </p>
         </div>
         
