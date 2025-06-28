@@ -1,4 +1,3 @@
-
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -53,7 +52,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="font-medium text-gray-200">Email</h4>
-                  <p className="text-gray-400">mahmoud.said5456@gmail.com</p>
+                  <p className="text-gray-400">muhammedtallat4@gmail.com</p>
                 </div>
               </div>
               
@@ -63,7 +62,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="font-medium text-gray-200">Phone</h4>
-                  <p className="text-gray-400">01557300816</p>
+                  <p className="text-gray-400">+201028182637</p>
                 </div>
               </div>
               
@@ -82,7 +81,7 @@ const Contact = () => {
               <h4 className="font-medium mb-4 text-gray-200">Follow Me</h4>
               <div className="flex gap-4">
                 <a 
-                  href="https://www.linkedin.com/in/mahmoud-saeed-0971aa222/" 
+                  href="https://www.linkedin.com/in/muhammed-tallat-a440881b7/" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="w-10 h-10 bg-gradient-to-r from-blue-600 to-blue-700 rounded-lg flex items-center justify-center text-white hover:shadow-lg transform hover:scale-105 transition-all duration-300"
@@ -90,7 +89,7 @@ const Contact = () => {
                   <Linkedin size={20} />
                 </a>
                 <a 
-                  href="https://github.com/mahmoud6171" 
+                  href="https://github.com/MhmdTalat" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="w-10 h-10 bg-gradient-to-r from-gray-700 to-gray-800 rounded-lg flex items-center justify-center text-white hover:shadow-lg transform hover:scale-105 transition-all duration-300"
