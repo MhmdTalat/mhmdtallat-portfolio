@@ -1,11 +1,33 @@
+
 import { Button } from "@/components/ui/button";
-import { Github, Linkedin, Mail, ChevronDown } from "lucide-react";
-import { useEffect } from "react";
+import { Github, Linkedin, Mail, ChevronDown, Moon, Sun } from "lucide-react";
+import { useEffect, useState } from "react";
 
 const Hero = () => {
+  const [isDarkMode, setIsDarkMode] = useState(true);
+
   const scrollToSection = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
   };
+
+  const toggleDarkMode = () => {
+    setIsDarkMode(!isDarkMode);
+    document.documentElement.classList.toggle('dark');
+    localStorage.setItem('darkMode', (!isDarkMode).toString());
+  };
+
+  useEffect(() => {
+    const savedMode = localStorage.getItem('darkMode');
+    if (savedMode !== null) {
+      const darkMode = savedMode === 'true';
+      setIsDarkMode(darkMode);
+      if (darkMode) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    }
+  }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -26,7 +48,19 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 via-blue-900 to-indigo-900 relative overflow-hidden">
+    <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 via-blue-900 to-indigo-900 dark:from-gray-950 dark:via-blue-950 dark:to-indigo-950 relative overflow-hidden">
+      {/* Dark Mode Toggle */}
+      <div className="absolute top-6 right-6 z-20">
+        <Button
+          onClick={toggleDarkMode}
+          variant="outline"
+          size="icon"
+          className="border-2 border-blue-500 text-blue-400 hover:bg-blue-600 hover:text-white transition-all duration-300"
+        >
+          {isDarkMode ? <Sun size={20} /> : <Moon size={20} />}
+        </Button>
+      </div>
+
       {/* Background decorative elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-full blur-3xl"></div>
