@@ -79,7 +79,7 @@ const Hero = () => {
           
           <div className="flex justify-center gap-6">
             <a 
-              href="https://linkedin.com/in/yourprofile" 
+              href="https://www.linkedin.com/in/muhammed-tallat-a440881b7/" 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-blue-400 transition-all duration-300 transform hover:scale-110"
@@ -87,7 +87,7 @@ const Hero = () => {
               <Linkedin size={32} />
             </a>
             <a 
-              href="https://github.com/yourusername" 
+              href="https://github.com/MhmdTalat" 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-gray-200 transition-all duration-300 transform hover:scale-110"

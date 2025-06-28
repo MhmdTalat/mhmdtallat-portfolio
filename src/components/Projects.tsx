@@ -10,7 +10,7 @@ const Projects = () => {
       title: "Deep Fake Media Detection",
       description: "Graduation project: Innovative mobile application and web platform for detecting deep fake media. Achieved 89.3583 AUROC score using Convolutional Recurrent Neural Networks (CRNN). Published in IEEE MIUCC 2022.",
       technologies: ["ASP.NET", "Flutter", "Python", "CRNN", "Computer Vision", "Machine Learning"],
-      githubUrl: "https://github.com/yourusername/deepfake-detection",
+      githubUrl: "https://github.com/MhmdTalat/deepfake-detection",
       liveUrl: "https://ieeexplore.ieee.org/document/your-paper",
       image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=800&q=80"
     },
@@ -18,7 +18,7 @@ const Projects = () => {
       title: "E-Commerce API",
       description: "Comprehensive e-commerce backend API built with ASP.NET Core. Features secure JWT authentication, product & category management, shopping cart system, and scalable architecture.",
       technologies: ["ASP.NET Core", "Entity Framework Core", "SQL Server", "JWT", "Swagger", "C#"],
-      githubUrl: "https://github.com/yourusername/ecommerce-api",
+      githubUrl: "https://github.com/MhmdTalat/ecommerce-api",
       liveUrl: "#",
       image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=800&q=80"
     },
@@ -26,7 +26,7 @@ const Projects = () => {
       title: "E-Commerce Website",
       description: "Full-featured e-commerce web application with JWT authentication, real-time order tracking, smart cart & wishlist functionality, and comprehensive admin dashboard.",
       technologies: ["ASP.NET MVC", "C#", "JavaScript", "Bootstrap", "Entity Framework Core", "SQL Server"],
-      githubUrl: "https://github.com/yourusername/ecommerce-site",
+      githubUrl: "https://github.com/MhmdTalat/ecommerce-site",
       liveUrl: "#",
       image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=800&q=80"
     },
@@ -34,7 +34,7 @@ const Projects = () => {
       title: "To-Do List Web App",
       description: "Task management web application built with ASP.NET Core MVC. Features include task organization, deadline reminders, category management, and progress tracking.",
       technologies: ["ASP.NET Core MVC", "SQL Server", "Entity Framework", "Bootstrap", "C#"],
-      githubUrl: "https://github.com/yourusername/todo-app",
+      githubUrl: "https://github.com/MhmdTalat/todo-app",
       liveUrl: "#",
       image: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&w=800&q=80"
     },
@@ -42,7 +42,7 @@ const Projects = () => {
       title: "Egyptian National ID Field Detector (EKYC)",
       description: "Computer Vision project for automated field extraction from Egyptian ID documents. Features region-based detection, signature recognition, and intelligent classification with confidence scoring.",
       technologies: ["Python", "OpenCV", "NumPy", "Matplotlib", "PIL", "Computer Vision"],
-      githubUrl: "https://github.com/yourusername/id-detector",
+      githubUrl: "https://github.com/MhmdTalat/id-detector",
       liveUrl: "#",
       image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=800&q=80"
     },
@@ -50,7 +50,7 @@ const Projects = () => {
       title: "QR Code PDF Generator",
       description: "Utility application for generating QR codes and embedding them into PDF documents. Supports customizable layouts, batch processing, and multiple input formats.",
       technologies: ["C#", ".NET 6", "QRCoder", "iTextSharp", "PDF Generation"],
-      githubUrl: "https://github.com/yourusername/qr-pdf-generator",
+      githubUrl: "https://github.com/MhmdTalat/qr-pdf-generator",
       liveUrl: "#",
       image: "https://images.unsplash.com/photo-1606776570468-1b23a6f4db69?auto=format&fit=crop&w=800&q=80"
     }
@@ -111,7 +111,7 @@ const Projects = () => {
         
         <div className="text-center mt-12 scroll-reveal">
           <Button variant="outline" size="lg" asChild className="border-gray-600 text-gray-200 hover:bg-gray-700">
-            <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/MhmdTalat" target="_blank" rel="noopener noreferrer">
               <Github size={20} className="mr-2" />
               View All Projects on GitHub
             </a>
