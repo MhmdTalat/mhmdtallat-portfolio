@@ -1,4 +1,3 @@
-
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -52,7 +51,7 @@ const Projects = () => {
       technologies: ["C#", ".NET 6", "QRCoder", "iTextSharp", "PDF Generation"],
       githubUrl: "https://github.com/MhmdTalat/qr-pdf-generator",
       liveUrl: "#",
-      image: "https://images.unsplash.com/photo-1606776570468-1b23a6f4db69?auto=format&fit=crop&w=800&q=80"
+      image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80"
     }
   ];
 
