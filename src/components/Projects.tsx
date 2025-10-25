@@ -5,19 +5,20 @@ import { Github, ExternalLink } from "lucide-react";
 
 const Projects = () => {
   const projects = [
+  
     {
       title: "Deep Fake Media Detection",
       description: "Graduation project: Innovative mobile application and web platform for detecting deep fake media. Achieved 89.3583 AUROC score using Convolutional Recurrent Neural Networks (CRNN). Published in IEEE MIUCC 2022.",
       technologies: ["ASP.NET", "Flutter", "Python", "CRNN", "Computer Vision", "Machine Learning"],
       githubUrl: "https://github.com/MhmdTalat/deepfake-detection",
-      liveUrl: "https://ieeexplore.ieee.org/document/your-paper",
+      liveUrl: "https://ieeexplore.ieee.org/document/9781791",
       image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=800&q=80"
     },
     {
       title: "E-Commerce API",
       description: "Comprehensive e-commerce backend API built with ASP.NET Core. Features secure JWT authentication, product & category management, shopping cart system, and scalable architecture.",
       technologies: ["ASP.NET Core", "Entity Framework Core", "SQL Server", "JWT", "Swagger", "C#"],
-      githubUrl: "https://github.com/MhmdTalat/ecommerce-api",
+      githubUrl: "https://github.com/MhmdTalat/E-Commerce-API---Scalable-Secure-Shopping-Platform-",
       liveUrl: "#",
       image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=800&q=80"
     },
@@ -25,7 +26,7 @@ const Projects = () => {
       title: "E-Commerce Website",
       description: "Full-featured e-commerce web application with JWT authentication, real-time order tracking, smart cart & wishlist functionality, and comprehensive admin dashboard.",
       technologies: ["ASP.NET MVC", "C#", "JavaScript", "Bootstrap", "Entity Framework Core", "SQL Server"],
-      githubUrl: "https://github.com/MhmdTalat/ecommerce-site",
+      githubUrl: "https://github.com/MhmdTalat/ECommerceProject",
       liveUrl: "#",
       image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=800&q=80"
     },
@@ -33,15 +34,15 @@ const Projects = () => {
       title: "To-Do List Web App",
       description: "Task management web application built with ASP.NET Core MVC. Features include task organization, deadline reminders, category management, and progress tracking.",
       technologies: ["ASP.NET Core MVC", "SQL Server", "Entity Framework", "Bootstrap", "C#"],
-      githubUrl: "https://github.com/MhmdTalat/todo-app",
+      githubUrl: "https://github.com/MhmdTalat/To-Do-List",
       liveUrl: "#",
       image: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&w=800&q=80"
     },
     {
-      title: "Egyptian National ID Field Detector (EKYC)",
+      title: "Egyptian National ID Field Detector (OCR)",
       description: "Computer Vision project for automated field extraction from Egyptian ID documents. Features region-based detection, signature recognition, and intelligent classification with confidence scoring.",
       technologies: ["Python", "OpenCV", "NumPy", "Matplotlib", "PIL", "Computer Vision"],
-      githubUrl: "https://github.com/MhmdTalat/id-detector",
+      githubUrl: "https://github.com/MhmdTalat/OCR_Egyptian_ID",
       liveUrl: "#",
       image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=800&q=80"
     },
@@ -53,6 +54,16 @@ const Projects = () => {
       liveUrl: "#",
       image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80"
     }
+,
+    {
+      title: "Pharmacy Management System",
+      description: "Enterprise-grade pharmacy management platform streamlining daily operations including prescription processing, inventory management, customer records, purchase orders, and financial reporting. Features admin dashboard with real-time analytics and smart cart functionality.",
+      technologies: ["ASP.NET MVC", "Entity Framework Core", "SQL Server", "Oracle DB", "C#", "JavaScript", "Bootstrap", "JWT Authentication"],
+      githubUrl: "https://github.com/MhmdTalat/pharmacy-management-system",
+      liveUrl: "#",
+      image: "https://images.unsplash.com/photo-1587854692152-cbe660dbde88?auto=format&fit=crop&w=800&q=80"
+    }
+
   ];
 
   return (
