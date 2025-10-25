@@ -71,13 +71,14 @@ const Hero = () => {
         <div className="scroll-reveal">
           <div className="mb-8">
             <div className="w-40 h-40 mx-auto mb-6 rounded-full bg-gradient-to-r from-blue-500 to-indigo-500 p-1 shadow-2xl hover:shadow-blue-500/25 transition-all duration-300">
-              <div className="w-full h-full rounded-full overflow-hidden bg-gray-800 flex items-center justify-center">
-                <img 
-                  src="/lovable-uploads/3b855fa9-1970-4082-8363-932ad0dc59d8.png" 
-                  alt="Muhammed Tallat Hassan Ahmed" 
-                  className="w-full h-full object-cover rounded-full"
-                />
-              </div>
+            <div className="w-full h-full rounded-full overflow-hidden bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center shadow-2xl ring-4 ring-teal-500/20 ring-offset-4 ring-offset-gray-900 transition-all duration-300 hover:ring-teal-400/40 hover:shadow-teal-500/20 hover:scale-105">
+  <img 
+    src="/lovable-uploads/3b855fa9-1970-4082-8363-932ad0dc59d8.png" 
+    alt="Muhammed Tallat Hassan Ahmed" 
+    className="w-full h-full object-cover rounded-full transition-transform duration-300 hover:scale-110"
+  />
+</div>
+
             </div>
           </div>
           
