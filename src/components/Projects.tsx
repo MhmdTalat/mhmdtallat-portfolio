@@ -1,6 +1,17 @@
 import { Button } from "@/components/ui/button";
-import { Github, ExternalLink, Folder, Star, GitFork } from "lucide-react";
+import { Github, ExternalLink, Star, GitFork } from "lucide-react";
 import { motion } from "framer-motion";
+
+import imgDeepfake from "@/assets/project-deepfake.jpg";
+import imgElearning from "@/assets/project-elearning.jpg";
+import imgFaceLiveness from "@/assets/project-face-liveness.jpg";
+import imgDbGateway from "@/assets/project-db-gateway.jpg";
+import imgEcommerceApi from "@/assets/project-ecommerce-api.jpg";
+import imgFoodmart from "@/assets/project-foodmart.jpg";
+import imgPharmacy from "@/assets/project-pharmacy.jpg";
+import imgEmailCleaner from "@/assets/project-email-cleaner.jpg";
+import imgOcrId from "@/assets/project-ocr-id.jpg";
+import imgTodo from "@/assets/project-todo.jpg";
 
 const projects = [
   {
@@ -11,6 +22,7 @@ const projects = [
     liveUrl: "https://ieeexplore.ieee.org/document/9781791",
     featured: true,
     language: "Python",
+    image: imgDeepfake,
   },
   {
     title: "E-Learning Model",
@@ -19,6 +31,7 @@ const projects = [
     githubUrl: "https://github.com/MhmdTalat/E-learning-model-",
     liveUrl: "#",
     language: "TypeScript",
+    image: imgElearning,
   },
   {
     title: "Face Liveness Detection",
@@ -27,6 +40,7 @@ const projects = [
     githubUrl: "https://github.com/MhmdTalat/Face-Liveness-Detection-Anti-Spoofing-Web-App",
     liveUrl: "#",
     language: "Python",
+    image: imgFaceLiveness,
   },
   {
     title: "Database Integration API Gateway",
@@ -35,6 +49,7 @@ const projects = [
     githubUrl: "https://github.com/MhmdTalat/Database-Integration-Using-API-Gateway-Oracle-SQL-Server-",
     liveUrl: "#",
     language: "C#",
+    image: imgDbGateway,
   },
   {
     title: "E-Commerce API",
@@ -45,6 +60,7 @@ const projects = [
     stars: 1,
     forks: 1,
     language: "C#",
+    image: imgEcommerceApi,
   },
   {
     title: "FoodMart E-Commerce",
@@ -53,6 +69,7 @@ const projects = [
     githubUrl: "https://github.com/MhmdTalat/ECommerceProject",
     liveUrl: "#",
     language: "HTML",
+    image: imgFoodmart,
   },
   {
     title: "Pharmacy Management System",
@@ -62,6 +79,7 @@ const projects = [
     liveUrl: "#",
     stars: 1,
     language: "HTML",
+    image: imgPharmacy,
   },
   {
     title: "Smart Email Cleaner",
@@ -70,6 +88,7 @@ const projects = [
     githubUrl: "https://github.com/MhmdTalat/Smart-Email-Cleaner",
     liveUrl: "#",
     language: "JavaScript",
+    image: imgEmailCleaner,
   },
   {
     title: "Egyptian National ID OCR",
@@ -79,6 +98,7 @@ const projects = [
     liveUrl: "#",
     stars: 1,
     language: "Python",
+    image: imgOcrId,
   },
   {
     title: "To-Do List Web App",
@@ -87,6 +107,7 @@ const projects = [
     githubUrl: "https://github.com/MhmdTalat/To-Do-List",
     liveUrl: "#",
     language: "C#",
+    image: imgTodo,
   },
 ];
 
@@ -124,69 +145,87 @@ const Projects = () => (
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: i * 0.06 }}
             whileHover={{ y: -6 }}
-            className={`group bg-gray-900/60 border rounded-xl p-6 flex flex-col transition-all duration-300 ${
+            className={`group bg-gray-900/60 border rounded-xl overflow-hidden flex flex-col transition-all duration-300 ${
               project.featured
                 ? "border-cyan-500/30 shadow-lg shadow-cyan-500/5"
                 : "border-gray-800 hover:border-gray-700"
             }`}
           >
-            <div className="flex items-center justify-between mb-4">
-              <Folder className="w-7 h-7 text-cyan-500/60" />
-              <div className="flex items-center gap-3">
-                {project.stars && (
-                  <span className="flex items-center gap-1 text-gray-500 text-xs">
-                    <Star size={13} /> {project.stars}
-                  </span>
-                )}
-                {project.forks && (
-                  <span className="flex items-center gap-1 text-gray-500 text-xs">
-                    <GitFork size={13} /> {project.forks}
-                  </span>
-                )}
+            {/* Project Image */}
+            <div className="relative aspect-video overflow-hidden">
+              <img
+                src={project.image}
+                alt={project.title}
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-950/40 to-transparent" />
+
+              {/* Overlay links */}
+              <div className="absolute top-3 right-3 flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <a
                   href={project.githubUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-600 hover:text-cyan-400 transition-colors"
+                  className="w-8 h-8 rounded-lg bg-gray-950/80 backdrop-blur-sm border border-gray-700 flex items-center justify-center text-gray-300 hover:text-cyan-400 hover:border-cyan-500/40 transition-colors"
                 >
-                  <Github size={17} />
+                  <Github size={14} />
                 </a>
                 {project.liveUrl !== "#" && (
                   <a
                     href={project.liveUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-600 hover:text-cyan-400 transition-colors"
+                    className="w-8 h-8 rounded-lg bg-gray-950/80 backdrop-blur-sm border border-gray-700 flex items-center justify-center text-gray-300 hover:text-cyan-400 hover:border-cyan-500/40 transition-colors"
                   >
-                    <ExternalLink size={17} />
+                    <ExternalLink size={14} />
                   </a>
                 )}
               </div>
+
+              {/* Stars/Forks badge */}
+              {(project.stars || project.forks) && (
+                <div className="absolute top-3 left-3 flex items-center gap-2">
+                  {project.stars && (
+                    <span className="flex items-center gap-1 text-xs bg-gray-950/80 backdrop-blur-sm border border-gray-700 rounded-md px-2 py-0.5 text-yellow-400">
+                      <Star size={11} /> {project.stars}
+                    </span>
+                  )}
+                  {project.forks && (
+                    <span className="flex items-center gap-1 text-xs bg-gray-950/80 backdrop-blur-sm border border-gray-700 rounded-md px-2 py-0.5 text-gray-400">
+                      <GitFork size={11} /> {project.forks}
+                    </span>
+                  )}
+                </div>
+              )}
             </div>
 
-            <h3 className="text-lg font-semibold text-gray-100 mb-2 group-hover:text-cyan-400 transition-colors">
-              {project.title}
-            </h3>
-            <p className="text-gray-500 text-sm leading-relaxed mb-4 flex-1">{project.description}</p>
+            {/* Content */}
+            <div className="p-5 flex flex-col flex-1">
+              <h3 className="text-lg font-semibold text-gray-100 mb-2 group-hover:text-cyan-400 transition-colors">
+                {project.title}
+              </h3>
+              <p className="text-gray-500 text-sm leading-relaxed mb-4 flex-1">{project.description}</p>
 
-            <div className="flex flex-wrap gap-2 mb-3">
-              {project.technologies.map((tech) => (
-                <span key={tech} className="text-[11px] font-mono text-gray-500">
-                  {tech}
-                </span>
-              ))}
-            </div>
-
-            <div className="flex items-center gap-2 pt-2 border-t border-gray-800/50">
-              <span className={`w-2.5 h-2.5 rounded-full ${langColors[project.language] || "bg-gray-500"}`} />
-              <span className="text-xs text-gray-500 font-mono">{project.language}</span>
-            </div>
-
-            {project.featured && (
-              <div className="mt-3 pt-2 border-t border-cyan-500/10">
-                <span className="text-[10px] font-mono text-cyan-400/60 uppercase tracking-widest">★ IEEE Published</span>
+              <div className="flex flex-wrap gap-2 mb-3">
+                {project.technologies.map((tech) => (
+                  <span key={tech} className="text-[11px] font-mono text-gray-500 bg-gray-800/50 px-2 py-0.5 rounded">
+                    {tech}
+                  </span>
+                ))}
               </div>
-            )}
+
+              <div className="flex items-center gap-2 pt-3 border-t border-gray-800/50">
+                <span className={`w-2.5 h-2.5 rounded-full ${langColors[project.language] || "bg-gray-500"}`} />
+                <span className="text-xs text-gray-500 font-mono">{project.language}</span>
+              </div>
+
+              {project.featured && (
+                <div className="mt-3 pt-2 border-t border-cyan-500/10">
+                  <span className="text-[10px] font-mono text-cyan-400/60 uppercase tracking-widest">★ IEEE Published</span>
+                </div>
+              )}
+            </div>
           </motion.div>
         ))}
       </div>
