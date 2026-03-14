@@ -1,82 +1,136 @@
+import { motion } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
 
-import { Badge } from "@/components/ui/badge";
+const skills = [
+  { name: "C#", level: 90 },
+  { name: "ASP.NET Core", level: 85 },
+  { name: "Entity Framework", level: 85 },
+  { name: "Web API", level: 85 },
+  { name: "SQL Server", level: 80 },
+  { name: "JavaScript", level: 80 },
+  { name: "MVC", level: 80 },
+  { name: "HTML5/CSS3", level: 85 },
+  { name: "Git/GitHub", level: 85 },
+  { name: "LINQ", level: 80 },
+];
 
-const Skills = () => {
-  const skills = [
-    { name: "C#", level: 90 },
-    { name: "ASP.NET Core", level: 85 },
-    { name: "Entity Framework", level: 85 },
-    { name: "SQL Server", level: 80 },
-    { name: "JavaScript", level: 80 },
-    { name: "Web API", level: 85 },
-    { name: "MVC", level: 80 },
-    { name: "HTML5/CSS3", level: 85 },
-    { name: "Bootstrap", level: 75 },
-    { name: "jQuery", level: 75 },
-    { name: "LINQ", level: 80 },
-    { name: "Git/GitHub", level: 85 }
-  ];
+const techCategories = [
+  {
+    label: "Backend",
+    techs: ["C#", "ASP.NET Core", "ASP.NET MVC", "Web API", ".NET Core", "Entity Framework Core", "ADO.NET", "LINQ", "JWT", "REST APIs", "Microservices"],
+  },
+  {
+    label: "Frontend",
+    techs: ["HTML5", "CSS3", "Bootstrap", "JavaScript", "jQuery", "JSON", "XML"],
+  },
+  {
+    label: "Data & DB",
+    techs: ["SQL Server", "PostgreSQL", "EPPlus", "Open XML SDK", "iTextSharp"],
+  },
+  {
+    label: "AI & Vision",
+    techs: ["Python", "OpenCV", "NumPy", "TensorFlow", "Computer Vision", "Deep Learning", "Machine Learning"],
+  },
+  {
+    label: "Tools",
+    techs: ["Visual Studio", "Git", "GitHub", "Swagger", "Odoo ERP", "QRCoder"],
+  },
+];
 
-  const technologies = [
-    "C#", "ASP.NET Core", "ASP.NET MVC", "Web API", ".NET Framework", ".NET Core",
-    "Entity Framework Core", "ADO.NET", "LINQ", "SQL Server", "PostgreSQL",
-    "HTML5", "CSS3", "Bootstrap", "JavaScript", "jQuery", "JSON", "XML",
-    "Visual Studio", "Git", "GitHub", "Swagger", "JWT Authentication",
-    "OOP", "Data Structures", "Algorithms", "Microservices", "REST APIs",
-    "Computer Vision", "OpenCV", "Python", "NumPy", "Matplotlib", "PIL",
-    "QRCoder", "iTextSharp", "EPPlus", "Open XML SDK", "Odoo ERP",
-    "Machine Learning", "TensorFlow", "Deep Learning", "Neural Networks"
-  ];
+const AnimatedBar = ({ name, level, delay }: { name: string; level: number; delay: number }) => {
+  const [inView, setInView] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) setInView(true); },
+      { threshold: 0.5 }
+    );
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, []);
 
   return (
-    <section id="skills" className="py-20 bg-gray-900">
-      <div className="container mx-auto px-6">
-        <div className="text-center mb-16 scroll-reveal">
-          <h2 className="text-4xl font-bold bg-gradient-to-r from-gray-100 to-blue-300 bg-clip-text text-transparent mb-4">Skills & Technologies</h2>
-          <p className="text-xl text-gray-300">
-            Here are the technologies and tools I work with in .NET Development, Full-Stack Development, and Computer Vision
-          </p>
-        </div>
-        
-        <div className="grid lg:grid-cols-2 gap-12">
-          <div className="scroll-reveal-left">
-            <h3 className="text-2xl font-semibold mb-8 text-gray-100">Proficiency Levels</h3>
-            <div className="space-y-6">
-              {skills.map((skill) => (
-                <div key={skill.name}>
-                  <div className="flex justify-between mb-2">
-                    <span className="text-gray-200 font-medium">{skill.name}</span>
-                    <span className="text-gray-400">{skill.level}%</span>
-                  </div>
-                  <div className="w-full bg-gray-700 rounded-full h-2">
-                    <div 
-                      className="bg-gradient-to-r from-blue-500 to-indigo-600 h-2 rounded-full transition-all duration-1000"
-                      style={{ width: `${skill.level}%` }}
-                    ></div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-          
-          <div className="scroll-reveal-right">
-            <h3 className="text-2xl font-semibold mb-8 text-gray-100">Technologies</h3>
-            <div className="flex flex-wrap gap-3">
-              {technologies.map((tech) => (
-                <Badge 
-                  key={tech} 
-                  variant="secondary" 
-                  className="text-sm py-2 px-4 bg-gray-800 border border-gray-600 text-gray-200 hover:border-blue-500 hover:bg-blue-900/30 transition-colors"
-                >
-                  {tech}
-                </Badge>
-              ))}
-            </div>
-          </div>
-        </div>
+    <div ref={ref}>
+      <div className="flex justify-between mb-1.5">
+        <span className="text-gray-300 text-sm font-mono">{name}</span>
+        <span className="text-cyan-400 text-xs font-mono">{level}%</span>
       </div>
-    </section>
+      <div className="w-full bg-gray-800 rounded-full h-2 overflow-hidden">
+        <motion.div
+          initial={{ width: 0 }}
+          animate={inView ? { width: `${level}%` } : {}}
+          transition={{ duration: 1, delay, ease: "easeOut" }}
+          className="h-full rounded-full bg-gradient-to-r from-cyan-500 to-blue-500"
+        />
+      </div>
+    </div>
   );
 };
+
+const Skills = () => (
+  <section id="skills" className="py-20 relative">
+    <div className="container mx-auto px-6">
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        className="text-center mb-16"
+      >
+        <span className="text-cyan-400 font-mono text-sm mb-2 block">{"// skills.config"}</span>
+        <h2 className="text-4xl font-bold text-gray-100 mb-4">Skills & Technologies</h2>
+        <p className="text-gray-400">The stack I use to build performant, scalable applications</p>
+      </motion.div>
+
+      <div className="grid lg:grid-cols-2 gap-12">
+        <motion.div
+          initial={{ opacity: 0, x: -30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <h3 className="text-lg font-mono text-gray-200 mb-6 flex items-center gap-2">
+            <span className="text-cyan-400">$</span> proficiency --list
+          </h3>
+          <div className="space-y-4">
+            {skills.map((s, i) => (
+              <AnimatedBar key={s.name} name={s.name} level={s.level} delay={i * 0.05} />
+            ))}
+          </div>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, x: 30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <h3 className="text-lg font-mono text-gray-200 mb-6 flex items-center gap-2">
+            <span className="text-cyan-400">$</span> tech --categories
+          </h3>
+          <div className="space-y-5">
+            {techCategories.map((cat) => (
+              <div key={cat.label}>
+                <span className="text-xs font-mono text-gray-500 uppercase tracking-wider mb-2 block">{cat.label}</span>
+                <div className="flex flex-wrap gap-2">
+                  {cat.techs.map((tech) => (
+                    <motion.span
+                      key={tech}
+                      whileHover={{ scale: 1.08 }}
+                      className="px-3 py-1 text-xs font-mono rounded-md bg-gray-900 border border-gray-800 text-gray-400 hover:text-cyan-400 hover:border-cyan-500/30 transition-colors cursor-default"
+                    >
+                      {tech}
+                    </motion.span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </motion.div>
+      </div>
+    </div>
+  </section>
+);
 
 export default Skills;

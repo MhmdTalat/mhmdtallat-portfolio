@@ -1,71 +1,87 @@
+import { motion } from "framer-motion";
+import { Server, Globe, Database, Code } from "lucide-react";
 
-import { Card, CardContent } from "@/components/ui/card";
-import { Code, Globe, Server, Database } from "lucide-react";
+const cards = [
+  { icon: Server, title: "Backend Dev", desc: "ASP.NET Core, Web API, EF Core", color: "cyan" },
+  { icon: Globe, title: "Frontend Dev", desc: "HTML5, CSS3, JS, Bootstrap, MVC", color: "green" },
+  { icon: Database, title: "Database", desc: "SQL Server, PostgreSQL, EF Core", color: "purple" },
+  { icon: Code, title: "Programming", desc: "C#, JS, C++, OOP, DSA", color: "amber" },
+];
 
-const About = () => {
-  return (
-    <section id="about" className="py-20 bg-gradient-to-br from-gray-800 to-gray-900">
-      <div className="container mx-auto px-6">
-        <div className="text-center mb-16 scroll-reveal">
-          <h2 className="text-4xl font-bold bg-gradient-to-r from-gray-100 to-blue-300 bg-clip-text text-transparent mb-4">About Me</h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            I'm a passionate .NET Full-Stack Developer with two years of professional experience in building scalable web applications. 
-            I specialize in creating efficient, secure solutions using the .NET ecosystem and modern web technologies.
-          </p>
-        </div>
-        
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          <Card className="scroll-reveal-scale hover:shadow-xl transition-all duration-300 transform hover:scale-105 border-gray-700 bg-gradient-to-br from-gray-800 to-blue-900/20">
-            <CardContent className="p-6 text-center">
-              <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
-                <Server className="w-8 h-8 text-white" />
-              </div>
-              <h3 className="text-xl font-semibold mb-2 text-gray-100">Backend Development</h3>
-              <p className="text-gray-400">ASP.NET Core, Web API, Entity Framework, ADO.NET</p>
-            </CardContent>
-          </Card>
-          
-          <Card className="scroll-reveal-scale hover:shadow-xl transition-all duration-300 transform hover:scale-105 border-gray-700 bg-gradient-to-br from-gray-800 to-green-900/20" style={{animationDelay: '0.1s'}}>
-            <CardContent className="p-6 text-center">
-              <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
-                <Globe className="w-8 h-8 text-white" />
-              </div>
-              <h3 className="text-xl font-semibold mb-2 text-gray-100">Frontend Development</h3>
-              <p className="text-gray-400">HTML5, CSS3, JavaScript, Bootstrap, jQuery, MVC</p>
-            </CardContent>
-          </Card>
-          
-          <Card className="scroll-reveal-scale hover:shadow-xl transition-all duration-300 transform hover:scale-105 border-gray-700 bg-gradient-to-br from-gray-800 to-purple-900/20" style={{animationDelay: '0.2s'}}>
-            <CardContent className="p-6 text-center">
-              <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
-                <Database className="w-8 h-8 text-white" />
-              </div>
-              <h3 className="text-xl font-semibold mb-2 text-gray-100">Database Management</h3>
-              <p className="text-gray-400">SQL Server, PostgreSQL, Entity Framework Core</p>
-            </CardContent>
-          </Card>
-          
-          <Card className="scroll-reveal-scale hover:shadow-xl transition-all duration-300 transform hover:scale-105 border-gray-700 bg-gradient-to-br from-gray-800 to-orange-900/20" style={{animationDelay: '0.3s'}}>
-            <CardContent className="p-6 text-center">
-              <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
-                <Code className="w-8 h-8 text-white" />
-              </div>
-              <h3 className="text-xl font-semibold mb-2 text-gray-100">Programming</h3>
-              <p className="text-gray-400">C#, JavaScript, C++, OOP, Data Structures</p>
-            </CardContent>
-          </Card>
-        </div>
-        
-        <div className="mt-16 text-center scroll-reveal">
-          <p className="text-lg text-gray-300 max-w-4xl mx-auto leading-relaxed">
-            Currently working as a Backend Developer at Egyptian Takaful, I have experience in building enterprise-level applications, 
-            working with microservices architecture, and developing innovative solutions including Computer Vision projects. 
-            I'm passionate about creating scalable, efficient solutions and staying current with the latest .NET technologies.
-          </p>
-        </div>
-      </div>
-    </section>
-  );
+const colorMap: Record<string, string> = {
+  cyan: "from-cyan-500 to-cyan-600 shadow-cyan-500/20",
+  green: "from-emerald-500 to-emerald-600 shadow-emerald-500/20",
+  purple: "from-violet-500 to-violet-600 shadow-violet-500/20",
+  amber: "from-amber-500 to-amber-600 shadow-amber-500/20",
 };
+
+const borderMap: Record<string, string> = {
+  cyan: "hover:border-cyan-500/30",
+  green: "hover:border-emerald-500/30",
+  purple: "hover:border-violet-500/30",
+  amber: "hover:border-amber-500/30",
+};
+
+const About = () => (
+  <section id="about" className="py-20 relative">
+    <div className="container mx-auto px-6">
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        className="text-center mb-16"
+      >
+        <span className="text-cyan-400 font-mono text-sm mb-2 block">{"// about.me"}</span>
+        <h2 className="text-4xl font-bold text-gray-100 mb-4">About Me</h2>
+        <p className="text-gray-400 max-w-2xl mx-auto leading-relaxed">
+          Passionate .NET Full-Stack Developer with 2+ years building scalable web apps.
+          I specialize in clean architecture, secure APIs, and enterprise solutions.
+        </p>
+      </motion.div>
+
+      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+        {cards.map((card, i) => (
+          <motion.div
+            key={card.title}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: i * 0.1 }}
+            whileHover={{ y: -6 }}
+            className={`bg-gray-900/60 border border-gray-800 rounded-xl p-6 text-center transition-colors duration-300 ${borderMap[card.color]}`}
+          >
+            <div className={`w-14 h-14 bg-gradient-to-br ${colorMap[card.color]} rounded-xl flex items-center justify-center mx-auto mb-4 shadow-lg`}>
+              <card.icon className="w-7 h-7 text-white" />
+            </div>
+            <h3 className="text-lg font-semibold text-gray-100 mb-1">{card.title}</h3>
+            <p className="text-gray-500 text-sm font-mono">{card.desc}</p>
+          </motion.div>
+        ))}
+      </div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6, delay: 0.3 }}
+        className="mt-14 max-w-3xl mx-auto bg-gray-900/40 border border-gray-800 rounded-xl p-6"
+      >
+        <div className="flex items-center gap-2 mb-3">
+          <div className="w-3 h-3 rounded-full bg-red-500/80" />
+          <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
+          <div className="w-3 h-3 rounded-full bg-green-500/80" />
+          <span className="ml-2 text-gray-600 text-xs font-mono">about.md</span>
+        </div>
+        <p className="text-gray-400 leading-relaxed text-sm font-mono">
+          <span className="text-cyan-400">currently:</span> Backend Developer @ Egyptian Takaful<br />
+          <span className="text-cyan-400">building:</span> Enterprise insurance applications & microservices<br />
+          <span className="text-cyan-400">exploring:</span> Computer Vision, ML/DL, and Cloud Architecture<br />
+          <span className="text-cyan-400">published:</span> IEEE MIUCC 2022 — Deep Fake Media Detection
+        </p>
+      </motion.div>
+    </div>
+  </section>
+);
 
 export default About;
