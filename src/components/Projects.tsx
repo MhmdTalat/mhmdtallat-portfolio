@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Github, ExternalLink, Folder } from "lucide-react";
+import { Github, ExternalLink, Folder, Star, GitFork } from "lucide-react";
 import { motion } from "framer-motion";
 
 const projects = [
@@ -10,50 +10,93 @@ const projects = [
     githubUrl: "https://github.com/MhmdTalat/deepfake-detection",
     liveUrl: "https://ieeexplore.ieee.org/document/9781791",
     featured: true,
+    language: "Python",
+  },
+  {
+    title: "E-Learning Model",
+    description: "A modern e-learning platform built with TypeScript, featuring interactive course management and learning modules.",
+    technologies: ["TypeScript", "React", "Web App"],
+    githubUrl: "https://github.com/MhmdTalat/E-learning-model-",
+    liveUrl: "#",
+    language: "TypeScript",
+  },
+  {
+    title: "Face Liveness Detection",
+    description: "Anti-spoofing web app to distinguish real faces from fake ones using live camera feed. Real-time face authentication system.",
+    technologies: ["Python", "OpenCV", "Anti-Spoofing", "Computer Vision", "Web App"],
+    githubUrl: "https://github.com/MhmdTalat/Face-Liveness-Detection-Anti-Spoofing-Web-App",
+    liveUrl: "#",
+    language: "Python",
+  },
+  {
+    title: "Database Integration API Gateway",
+    description: "API Gateway integrating Oracle Database and Microsoft SQL Server. Cross-database communication and unified data access layer.",
+    technologies: ["Oracle", "SQL Server", "API Gateway", "C#", ".NET"],
+    githubUrl: "https://github.com/MhmdTalat/Database-Integration-Using-API-Gateway-Oracle-SQL-Server-",
+    liveUrl: "#",
+    language: "C#",
   },
   {
     title: "E-Commerce API",
-    description: "Full e-commerce backend with JWT auth, product management, cart system, and scalable architecture.",
+    description: "Scalable & secure e-commerce backend API with JWT auth, product & category management, shopping cart system, and clean architecture.",
     technologies: ["ASP.NET Core", "EF Core", "SQL Server", "JWT", "Swagger"],
     githubUrl: "https://github.com/MhmdTalat/E-Commerce-API---Scalable-Secure-Shopping-Platform-",
     liveUrl: "#",
+    stars: 1,
+    forks: 1,
+    language: "C#",
   },
   {
-    title: "E-Commerce Website",
-    description: "Full-stack e-commerce with JWT auth, real-time order tracking, smart cart, wishlist, and admin dashboard.",
+    title: "FoodMart E-Commerce",
+    description: "Modern e-commerce grocery platform with seamless, secure shopping experience. Full-stack with admin dashboard, cart, wishlist, and order tracking.",
     technologies: ["ASP.NET MVC", "C#", "Bootstrap", "EF Core", "SQL Server"],
     githubUrl: "https://github.com/MhmdTalat/ECommerceProject",
     liveUrl: "#",
+    language: "HTML",
   },
   {
     title: "Pharmacy Management System",
-    description: "Enterprise pharmacy platform with prescription processing, inventory, customer records, and real-time analytics.",
+    description: "Enterprise pharmacy platform with prescription processing, inventory management, customer records, purchase orders, and real-time analytics dashboard.",
     technologies: ["ASP.NET MVC", "EF Core", "SQL Server", "Oracle", "JWT"],
     githubUrl: "https://github.com/MhmdTalat/pharmacy-management-system",
     liveUrl: "#",
+    stars: 1,
+    language: "HTML",
+  },
+  {
+    title: "Smart Email Cleaner",
+    description: "Intelligent email cleaning tool built with JavaScript. Automates inbox organization and cleanup workflows.",
+    technologies: ["JavaScript", "Automation", "Email API"],
+    githubUrl: "https://github.com/MhmdTalat/Smart-Email-Cleaner",
+    liveUrl: "#",
+    language: "JavaScript",
   },
   {
     title: "Egyptian National ID OCR",
-    description: "Computer Vision project for automated field extraction from Egyptian ID documents with confidence scoring.",
+    description: "Computer Vision project for automated field extraction from Egyptian ID documents with region-based detection and confidence scoring.",
     technologies: ["Python", "OpenCV", "NumPy", "PIL", "Computer Vision"],
     githubUrl: "https://github.com/MhmdTalat/OCR_Egyptian_ID",
     liveUrl: "#",
-  },
-  {
-    title: "QR Code PDF Generator",
-    description: "Utility for generating QR codes and embedding them into PDFs with customizable layouts and batch processing.",
-    technologies: ["C#", ".NET 6", "QRCoder", "iTextSharp"],
-    githubUrl: "https://github.com/MhmdTalat/qr-pdf-generator",
-    liveUrl: "#",
+    stars: 1,
+    language: "Python",
   },
   {
     title: "To-Do List Web App",
-    description: "Task management app with organization, deadline reminders, categories, and progress tracking.",
-    technologies: ["ASP.NET Core MVC", "SQL Server", "EF Core", "Bootstrap"],
+    description: "Task management platform for tracking personal tasks, boosting productivity, and efficiently managing daily schedules with deadline reminders.",
+    technologies: ["ASP.NET Core MVC", "SQL Server", "EF Core", "C#"],
     githubUrl: "https://github.com/MhmdTalat/To-Do-List",
     liveUrl: "#",
+    language: "C#",
   },
 ];
+
+const langColors: Record<string, string> = {
+  "C#": "bg-green-500",
+  Python: "bg-blue-500",
+  TypeScript: "bg-blue-400",
+  JavaScript: "bg-yellow-400",
+  HTML: "bg-orange-500",
+};
 
 const Projects = () => (
   <section id="projects" className="py-20 relative">
@@ -65,9 +108,11 @@ const Projects = () => (
         transition={{ duration: 0.6 }}
         className="text-center mb-16"
       >
-        <span className="text-cyan-400 font-mono text-sm mb-2 block">{"// projects.showcase()"}</span>
-        <h2 className="text-4xl font-bold text-gray-100 mb-4">Featured Projects</h2>
-        <p className="text-gray-400">Full-stack applications, APIs, and Computer Vision solutions</p>
+        <span className="text-cyan-400 font-mono text-sm mb-2 block">{"// github.repos.list()"}</span>
+        <h2 className="text-4xl font-bold text-gray-100 mb-4">All Projects</h2>
+        <p className="text-gray-400">
+          {projects.length} repositories · Full-stack apps, APIs, AI & Computer Vision
+        </p>
       </motion.div>
 
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -77,7 +122,7 @@ const Projects = () => (
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: i * 0.08 }}
+            transition={{ duration: 0.5, delay: i * 0.06 }}
             whileHover={{ y: -6 }}
             className={`group bg-gray-900/60 border rounded-xl p-6 flex flex-col transition-all duration-300 ${
               project.featured
@@ -86,15 +131,25 @@ const Projects = () => (
             }`}
           >
             <div className="flex items-center justify-between mb-4">
-              <Folder className="w-8 h-8 text-cyan-500/60" />
-              <div className="flex gap-2">
+              <Folder className="w-7 h-7 text-cyan-500/60" />
+              <div className="flex items-center gap-3">
+                {project.stars && (
+                  <span className="flex items-center gap-1 text-gray-500 text-xs">
+                    <Star size={13} /> {project.stars}
+                  </span>
+                )}
+                {project.forks && (
+                  <span className="flex items-center gap-1 text-gray-500 text-xs">
+                    <GitFork size={13} /> {project.forks}
+                  </span>
+                )}
                 <a
                   href={project.githubUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-600 hover:text-cyan-400 transition-colors"
                 >
-                  <Github size={18} />
+                  <Github size={17} />
                 </a>
                 {project.liveUrl !== "#" && (
                   <a
@@ -103,7 +158,7 @@ const Projects = () => (
                     rel="noopener noreferrer"
                     className="text-gray-600 hover:text-cyan-400 transition-colors"
                   >
-                    <ExternalLink size={18} />
+                    <ExternalLink size={17} />
                   </a>
                 )}
               </div>
@@ -114,7 +169,7 @@ const Projects = () => (
             </h3>
             <p className="text-gray-500 text-sm leading-relaxed mb-4 flex-1">{project.description}</p>
 
-            <div className="flex flex-wrap gap-2 mt-auto">
+            <div className="flex flex-wrap gap-2 mb-3">
               {project.technologies.map((tech) => (
                 <span key={tech} className="text-[11px] font-mono text-gray-500">
                   {tech}
@@ -122,8 +177,13 @@ const Projects = () => (
               ))}
             </div>
 
+            <div className="flex items-center gap-2 pt-2 border-t border-gray-800/50">
+              <span className={`w-2.5 h-2.5 rounded-full ${langColors[project.language] || "bg-gray-500"}`} />
+              <span className="text-xs text-gray-500 font-mono">{project.language}</span>
+            </div>
+
             {project.featured && (
-              <div className="mt-3 pt-3 border-t border-cyan-500/10">
+              <div className="mt-3 pt-2 border-t border-cyan-500/10">
                 <span className="text-[10px] font-mono text-cyan-400/60 uppercase tracking-widest">★ IEEE Published</span>
               </div>
             )}
