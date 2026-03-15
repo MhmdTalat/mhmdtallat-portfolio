@@ -162,7 +162,7 @@ const Projects = () => (
               <div className="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-950/40 to-transparent" />
 
               {/* Overlay links */}
-              <div className="absolute top-3 right-3 flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <div className="absolute top-3 right-3 flex items-center gap-2">
                 <a
                   href={project.githubUrl}
                   target="_blank"
@@ -215,9 +215,20 @@ const Projects = () => (
                 ))}
               </div>
 
-              <div className="flex items-center gap-2 pt-3 border-t border-gray-800/50">
-                <span className={`w-2.5 h-2.5 rounded-full ${langColors[project.language] || "bg-gray-500"}`} />
-                <span className="text-xs text-gray-500 font-mono">{project.language}</span>
+              <div className="flex items-center justify-between pt-3 border-t border-gray-800/50">
+                <div className="flex items-center gap-2">
+                  <span className={`w-2.5 h-2.5 rounded-full ${langColors[project.language] || "bg-gray-500"}`} />
+                  <span className="text-xs text-gray-500 font-mono">{project.language}</span>
+                </div>
+                <a
+                  href={project.githubUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1.5 text-xs font-mono text-gray-500 hover:text-cyan-400 transition-colors"
+                >
+                  <Github size={13} />
+                  View Repo
+                </a>
               </div>
 
               {project.featured && (
