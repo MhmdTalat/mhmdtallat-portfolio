@@ -2,38 +2,50 @@ import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
 const skills = [
-  { name: "C#", level: 90 },
-  { name: "ASP.NET Core", level: 85 },
-  { name: "Entity Framework", level: 85 },
-  { name: "Web API", level: 85 },
-  { name: "SQL Server", level: 80 },
-  { name: "JavaScript", level: 80 },
-  { name: "MVC", level: 80 },
-  { name: "HTML5/CSS3", level: 85 },
-  { name: "Git/GitHub", level: 85 },
-  { name: "LINQ", level: 80 },
+  { name: "C#", level: 92 },
+  { name: "ASP.NET Core", level: 90 },
+  { name: "Entity Framework Core", level: 88 },
+  { name: "Web API / REST", level: 90 },
+  { name: "SQL Server", level: 85 },
+  { name: "Angular / TypeScript", level: 78 },
+  { name: "Python", level: 75 },
+  { name: "Clean Architecture", level: 85 },
+  { name: "Docker / CI/CD", level: 70 },
+  { name: "Git / GitHub", level: 88 },
 ];
 
 const techCategories = [
   {
+    label: "Languages",
+    techs: ["C#", "C++", "Python", "JavaScript", "TypeScript"],
+  },
+  {
     label: "Backend",
-    techs: ["C#", "ASP.NET Core", "ASP.NET MVC", "Web API", ".NET Core", "Entity Framework Core", "ADO.NET", "LINQ", "JWT", "REST APIs", "Microservices"],
+    techs: ["ASP.NET Core", "Web API", "Entity Framework Core", "ADO.NET", "LINQ", "Dependency Injection", "JWT", "RESTful APIs", "Microservices"],
   },
   {
     label: "Frontend",
-    techs: ["HTML5", "CSS3", "Bootstrap", "JavaScript", "jQuery", "JSON", "XML"],
+    techs: ["Angular", "TypeScript", "HTML5", "CSS3", "Bootstrap", "JavaScript"],
   },
   {
-    label: "Data & DB",
-    techs: ["SQL Server", "PostgreSQL", "EPPlus", "Open XML SDK", "iTextSharp"],
+    label: "Databases",
+    techs: ["SQL Server", "Oracle", "PL/SQL", "Query Optimization", "Stored Procedures", "Database Design"],
+  },
+  {
+    label: "Architecture",
+    techs: ["Clean Architecture", "SOLID", "OOP", "Design Patterns", "Microservices"],
+  },
+  {
+    label: "Payments",
+    techs: ["Paymob", "Stripe API"],
   },
   {
     label: "AI & Vision",
-    techs: ["Python", "OpenCV", "NumPy", "TensorFlow", "Computer Vision", "Deep Learning", "Machine Learning"],
+    techs: ["OpenCV", "NumPy", "Computer Vision", "Deep Learning", "CRNN"],
   },
   {
-    label: "Tools",
-    techs: ["Visual Studio", "Git", "GitHub", "Swagger", "Odoo ERP", "QRCoder"],
+    label: "DevOps & Tools",
+    techs: ["Git", "GitHub", "Azure", "Docker", "Postman", "Swagger", "Unit Testing", "CI/CD"],
   },
 ];
 

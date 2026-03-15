@@ -2,10 +2,10 @@ import { motion } from "framer-motion";
 import { Server, Globe, Database, Code } from "lucide-react";
 
 const cards = [
-  { icon: Server, title: "Backend Dev", desc: "ASP.NET Core, Web API, EF Core", color: "cyan" },
-  { icon: Globe, title: "Frontend Dev", desc: "HTML5, CSS3, JS, Bootstrap, MVC", color: "green" },
-  { icon: Database, title: "Database", desc: "SQL Server, PostgreSQL, EF Core", color: "purple" },
-  { icon: Code, title: "Programming", desc: "C#, JS, C++, OOP, DSA", color: "amber" },
+  { icon: Server, title: "Backend Dev", desc: "ASP.NET Core, Web API, EF Core, ADO.NET", color: "cyan" },
+  { icon: Globe, title: "Frontend Dev", desc: "Angular, TypeScript, JavaScript, Bootstrap", color: "green" },
+  { icon: Database, title: "Database", desc: "SQL Server, Oracle, PL/SQL, Query Optimization", color: "purple" },
+  { icon: Code, title: "Architecture", desc: "Clean Architecture, SOLID, Design Patterns", color: "amber" },
 ];
 
 const colorMap: Record<string, string> = {
@@ -35,8 +35,9 @@ const About = () => (
         <span className="text-cyan-400 font-mono text-sm mb-2 block">{"// about.me"}</span>
         <h2 className="text-4xl font-bold text-gray-100 mb-4">About Me</h2>
         <p className="text-gray-400 max-w-2xl mx-auto leading-relaxed">
-          Passionate .NET Full-Stack Developer with 2+ years building scalable web apps.
-          I specialize in clean architecture, secure APIs, and enterprise solutions.
+          Full Stack Developer with a strong back-end focus using .NET technologies.
+          3+ years of expertise in building scalable web services, microservices, and data-driven applications.
+          Skilled in integrating payment gateways, applying clean architecture principles, and optimizing system performance.
         </p>
       </motion.div>
 
@@ -74,10 +75,10 @@ const About = () => (
           <span className="ml-2 text-gray-600 text-xs font-mono">about.md</span>
         </div>
         <p className="text-gray-400 leading-relaxed text-sm font-mono">
-          <span className="text-cyan-400">currently:</span> Backend Developer @ Egyptian Takaful<br />
-          <span className="text-cyan-400">building:</span> Enterprise insurance applications & microservices<br />
-          <span className="text-cyan-400">exploring:</span> Computer Vision, ML/DL, and Cloud Architecture<br />
-          <span className="text-cyan-400">published:</span> IEEE MIUCC 2022 — Deep Fake Media Detection
+          <span className="text-cyan-400">currently:</span> Full Stack Developer (.NET & Angular) @ Egyptian Takaful Insurance<br />
+          <span className="text-cyan-400">building:</span> Enterprise insurance apps, 15+ RESTful endpoints, Paymob integration<br />
+          <span className="text-cyan-400">education:</span> B.Sc. Computing & Information — Arab Academy for Science & Technology (2022)<br />
+          <span className="text-cyan-400">certified:</span> Oracle Data Platform 2025 · IEEE MIUCC 2022 · ITI Front-End · CCNA (88%)
         </p>
       </motion.div>
     </div>

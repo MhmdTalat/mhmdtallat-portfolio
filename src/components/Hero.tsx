@@ -4,10 +4,10 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 const roles = [
-  ".NET Full-Stack Developer",
-  "Backend Engineer",
+  "Full Stack Developer",
+  ".NET Backend Engineer",
   "API Architect",
-  "Problem Solver",
+  "Clean Architecture Advocate",
 ];
 
 const Hero = () => {
@@ -106,8 +106,8 @@ const Hero = () => {
           transition={{ delay: 0.9, duration: 0.6 }}
           className="text-base text-gray-500 mb-10 max-w-xl mx-auto leading-relaxed font-mono text-sm"
         >
-          2+ years building scalable .NET applications, REST APIs, and enterprise solutions.
-          Passionate about clean architecture and performance.
+          3+ years building scalable .NET applications, REST APIs, and enterprise solutions.
+          Skilled in payment integration (Paymob, Stripe), clean architecture, and Agile methodologies.
         </motion.p>
 
         <motion.div

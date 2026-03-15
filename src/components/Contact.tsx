@@ -23,7 +23,7 @@ const Contact = () => {
   const contactInfo = [
     { icon: Mail, label: "Email", value: "muhammedtallat4@gmail.com", color: "from-cyan-500 to-blue-500" },
     { icon: Phone, label: "Phone", value: "+201028182637", color: "from-emerald-500 to-green-500" },
-    { icon: MapPin, label: "Location", value: "Cairo, Egypt", color: "from-violet-500 to-purple-500" },
+    { icon: MapPin, label: "Location", value: "Nasr City, Cairo, Egypt", color: "from-violet-500 to-purple-500" },
   ];
 
   return (
