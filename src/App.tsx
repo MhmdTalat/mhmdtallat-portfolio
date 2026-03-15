@@ -14,19 +14,7 @@ const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <div className="ai-background">
-        {/* AI Floating Particles */}
-        <div className="ai-particles">
-          {Array.from({ length: 9 }).map((_, i) => (
-            <div key={i} className="ai-particle" />
-          ))}
-        </div>
-
-        {/* Neural Network Nodes */}
-        <div className="neural-network">
-          {Array.from({ length: 5 }).map((_, i) => (
-            <div key={i} className="neural-node" />
-          ))}
-        </div>
+        <Background3D />
 
         <Toaster />
         <Sonner />
