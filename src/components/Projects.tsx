@@ -162,7 +162,7 @@ const Projects = () => (
               <div className="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-950/40 to-transparent" />
 
               {/* Overlay links */}
-              <div className="absolute top-3 right-3 flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <div className="absolute top-3 right-3 flex items-center gap-2">
                 <a
                   href={project.githubUrl}
                   target="_blank"
