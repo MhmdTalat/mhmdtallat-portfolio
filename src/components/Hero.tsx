@@ -4,10 +4,10 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 const roles = [
-  ".NET Full-Stack Developer",
-  "Backend Engineer",
+  "Full Stack Developer",
+  ".NET Backend Engineer",
   "API Architect",
-  "Problem Solver",
+  "Clean Architecture Advocate",
 ];
 
 const Hero = () => {
