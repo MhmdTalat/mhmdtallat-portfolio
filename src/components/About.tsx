@@ -2,10 +2,10 @@ import { motion } from "framer-motion";
 import { Server, Globe, Database, Code } from "lucide-react";
 
 const cards = [
-  { icon: Server, title: "Backend Dev", desc: "ASP.NET Core, Web API, EF Core", color: "cyan" },
-  { icon: Globe, title: "Frontend Dev", desc: "HTML5, CSS3, JS, Bootstrap, MVC", color: "green" },
-  { icon: Database, title: "Database", desc: "SQL Server, PostgreSQL, EF Core", color: "purple" },
-  { icon: Code, title: "Programming", desc: "C#, JS, C++, OOP, DSA", color: "amber" },
+  { icon: Server, title: "Backend Dev", desc: "ASP.NET Core, Web API, EF Core, ADO.NET", color: "cyan" },
+  { icon: Globe, title: "Frontend Dev", desc: "Angular, TypeScript, JavaScript, Bootstrap", color: "green" },
+  { icon: Database, title: "Database", desc: "SQL Server, Oracle, PL/SQL, Query Optimization", color: "purple" },
+  { icon: Code, title: "Architecture", desc: "Clean Architecture, SOLID, Design Patterns", color: "amber" },
 ];
 
 const colorMap: Record<string, string> = {
