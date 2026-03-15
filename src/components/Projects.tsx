@@ -26,11 +26,11 @@ const projects = [
   },
   {
     title: "E-Learning Model",
-    description: "A modern e-learning platform built with TypeScript, featuring interactive course management and learning modules.",
-    technologies: ["TypeScript", "React", "Web App"],
+    description: "Full-stack e-learning platform with .NET 8 Web API backend and Angular TypeScript frontend. Manages departments, instructors, courses, and enrollments with repository pattern and EF Core migrations.",
+    technologies: [".NET 8 API", "Angular", "TypeScript", "EF Core", "SQL Server"],
     githubUrl: "https://github.com/MhmdTalat/E-learning-model-",
     liveUrl: "#",
-    language: "TypeScript",
+    language: "C#",
     image: imgElearning,
   },
   {
