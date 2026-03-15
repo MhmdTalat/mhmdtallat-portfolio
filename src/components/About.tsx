@@ -75,10 +75,10 @@ const About = () => (
           <span className="ml-2 text-gray-600 text-xs font-mono">about.md</span>
         </div>
         <p className="text-gray-400 leading-relaxed text-sm font-mono">
-          <span className="text-cyan-400">currently:</span> Backend Developer @ Egyptian Takaful<br />
-          <span className="text-cyan-400">building:</span> Enterprise insurance applications & microservices<br />
-          <span className="text-cyan-400">exploring:</span> Computer Vision, ML/DL, and Cloud Architecture<br />
-          <span className="text-cyan-400">published:</span> IEEE MIUCC 2022 — Deep Fake Media Detection
+          <span className="text-cyan-400">currently:</span> Full Stack Developer (.NET & Angular) @ Egyptian Takaful Insurance<br />
+          <span className="text-cyan-400">building:</span> Enterprise insurance apps, 15+ RESTful endpoints, Paymob integration<br />
+          <span className="text-cyan-400">education:</span> B.Sc. Computing & Information — Arab Academy for Science & Technology (2022)<br />
+          <span className="text-cyan-400">certified:</span> Oracle Data Platform 2025 · IEEE MIUCC 2022 · ITI Front-End · CCNA (88%)
         </p>
       </motion.div>
     </div>
