@@ -35,8 +35,9 @@ const About = () => (
         <span className="text-cyan-400 font-mono text-sm mb-2 block">{"// about.me"}</span>
         <h2 className="text-4xl font-bold text-gray-100 mb-4">About Me</h2>
         <p className="text-gray-400 max-w-2xl mx-auto leading-relaxed">
-          Passionate .NET Full-Stack Developer with 2+ years building scalable web apps.
-          I specialize in clean architecture, secure APIs, and enterprise solutions.
+          Full Stack Developer with a strong back-end focus using .NET technologies.
+          3+ years of expertise in building scalable web services, microservices, and data-driven applications.
+          Skilled in integrating payment gateways, applying clean architecture principles, and optimizing system performance.
         </p>
       </motion.div>
 
