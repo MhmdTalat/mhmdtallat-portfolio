@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Github, Linkedin, Mail, ChevronDown } from "lucide-react";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import CodeSnippet from "./CodeSnippet";
 
 const roles = [
   "Full Stack Developer",
