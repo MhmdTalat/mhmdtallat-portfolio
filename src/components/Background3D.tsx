@@ -1,5 +1,6 @@
-import { Canvas, useFrame } from '@react-three/fiber';
+import { Canvas, useFrame, extend } from '@react-three/fiber';
 import { useRef, useMemo } from 'react';
+import { Line } from '@react-three/drei';
 import * as THREE from 'three';
 
 const SpiderWeb = () => {
