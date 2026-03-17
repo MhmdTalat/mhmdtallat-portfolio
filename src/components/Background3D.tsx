@@ -82,15 +82,11 @@ const SpiderWeb = () => {
 
   return (
     <group ref={linesRef}>
-      {radialGeometries.map((geo, i) => (
-        <line key={`radial-${i}`} geometry={geo}>
-          <lineBasicMaterial color="#06b6d4" transparent opacity={0.2} />
-        </line>
+      {radialLines.map((l, i) => (
+        <Line key={`radial-${i}`} points={[l.start.toArray(), l.end.toArray()]} color="#06b6d4" transparent opacity={0.2} lineWidth={1} />
       ))}
-      {spiralGeometries.map((geo, i) => (
-        <line key={`spiral-${i}`} geometry={geo}>
-          <lineBasicMaterial color="#22d3ee" transparent opacity={0.15} />
-        </line>
+      {spiralLines.map((l, i) => (
+        <Line key={`spiral-${i}`} points={[l.start.toArray(), l.end.toArray()]} color="#22d3ee" transparent opacity={0.15} lineWidth={1} />
       ))}
       {/* Glow nodes at intersections */}
       {nodes.slice(0, 40).map((pos, i) => (
