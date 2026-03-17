@@ -154,7 +154,9 @@ const Hero = () => {
             </a>
           ))}
         </motion.div>
-      </div>
+
+      <CodeSnippet />
+
 
       <motion.div
         initial={{ opacity: 0 }}
