@@ -1,24 +1,29 @@
-import { Canvas, useFrame, extend } from '@react-three/fiber';
+import { Canvas, useFrame } from '@react-three/fiber';
 import { useRef, useMemo } from 'react';
-import { Line } from '@react-three/drei';
+import { Line, Text } from '@react-three/drei';
 import * as THREE from 'three';
+
+const techLabels = [
+  'Angular', 'TypeScript', '.NET 8', 'C#', 'SQL Server',
+  'REST API', 'RxJS', 'Entity Framework', 'Azure', 'Docker',
+  'Git', 'HTML5', 'CSS3', 'Node.js', 'MongoDB', 'Redis'
+];
 
 const SpiderWeb = () => {
   const linesRef = useRef<THREE.Group>(null);
-  
+
   const { nodes, radialLines, spiralLines } = useMemo(() => {
     const nodePositions: THREE.Vector3[] = [];
     const radial: { start: THREE.Vector3; end: THREE.Vector3 }[] = [];
     const spiral: { start: THREE.Vector3; end: THREE.Vector3 }[] = [];
-    
+
     const center = new THREE.Vector3(0, 0, -2);
     nodePositions.push(center);
-    
+
     const numRadials = 16;
     const numRings = 6;
     const maxRadius = 5;
 
-    // Create radial lines from center
     for (let r = 0; r < numRadials; r++) {
       const angle = (r / numRadials) * Math.PI * 2;
       const endPoint = new THREE.Vector3(
@@ -30,7 +35,6 @@ const SpiderWeb = () => {
       nodePositions.push(endPoint);
     }
 
-    // Create spiral/ring connections
     for (let ring = 1; ring <= numRings; ring++) {
       const radius = (ring / numRings) * maxRadius;
       const wobble = ring * 0.08;
@@ -57,22 +61,6 @@ const SpiderWeb = () => {
     return { nodes: nodePositions, radialLines: radial, spiralLines: spiral };
   }, []);
 
-  const radialGeometries = useMemo(() => {
-    return radialLines.map(line => {
-      const points = [line.start, line.end];
-      const geo = new THREE.BufferGeometry().setFromPoints(points);
-      return geo;
-    });
-  }, [radialLines]);
-
-  const spiralGeometries = useMemo(() => {
-    return spiralLines.map(line => {
-      const points = [line.start, line.end];
-      const geo = new THREE.BufferGeometry().setFromPoints(points);
-      return geo;
-    });
-  }, [spiralLines]);
-
   useFrame(({ clock }) => {
     if (linesRef.current) {
       linesRef.current.rotation.z = Math.sin(clock.getElapsedTime() * 0.1) * 0.05;
@@ -88,13 +76,81 @@ const SpiderWeb = () => {
       {spiralLines.map((l, i) => (
         <Line key={`spiral-${i}`} points={[l.start.toArray(), l.end.toArray()]} color="#22d3ee" transparent opacity={0.15} lineWidth={1} />
       ))}
-      {/* Glow nodes at intersections */}
       {nodes.slice(0, 40).map((pos, i) => (
         <mesh key={`node-${i}`} position={pos}>
           <sphereGeometry args={[0.025, 8, 8]} />
           <meshBasicMaterial color="#06b6d4" transparent opacity={0.5} />
         </mesh>
       ))}
+    </group>
+  );
+};
+
+const TechNodes = () => {
+  const groupRef = useRef<THREE.Group>(null);
+
+  const techPositions = useMemo(() => {
+    return techLabels.map((label, i) => {
+      const angle = (i / techLabels.length) * Math.PI * 2;
+      const ring = i % 2 === 0 ? 3.2 : 4.2;
+      return {
+        label,
+        position: new THREE.Vector3(
+          Math.cos(angle) * ring,
+          Math.sin(angle) * ring,
+          -1.5 + (Math.random() - 0.5) * 0.5
+        ),
+      };
+    });
+  }, []);
+
+  useFrame(({ clock }) => {
+    if (groupRef.current) {
+      groupRef.current.rotation.z = clock.getElapsedTime() * 0.02;
+    }
+  });
+
+  return (
+    <group ref={groupRef}>
+      {techPositions.map((tech, i) => (
+        <group key={i} position={tech.position}>
+          {/* Glowing node sphere */}
+          <mesh>
+            <sphereGeometry args={[0.08, 12, 12]} />
+            <meshBasicMaterial color="#22d3ee" transparent opacity={0.6} />
+          </mesh>
+          {/* Outer glow ring */}
+          <mesh>
+            <ringGeometry args={[0.1, 0.14, 16]} />
+            <meshBasicMaterial color="#06b6d4" transparent opacity={0.3} side={THREE.DoubleSide} />
+          </mesh>
+          {/* Tech label */}
+          <Text
+            position={[0, -0.25, 0]}
+            fontSize={0.15}
+            color="#22d3ee"
+            anchorX="center"
+            anchorY="top"
+            fillOpacity={0.5}
+          >
+            {tech.label}
+          </Text>
+        </group>
+      ))}
+      {/* Connection lines between adjacent tech nodes */}
+      {techPositions.map((tech, i) => {
+        const next = techPositions[(i + 1) % techPositions.length];
+        return (
+          <Line
+            key={`conn-${i}`}
+            points={[tech.position.toArray(), next.position.toArray()]}
+            color="#0891b2"
+            transparent
+            opacity={0.1}
+            lineWidth={0.5}
+          />
+        );
+      })}
     </group>
   );
 };
@@ -152,7 +208,6 @@ const CrawlingSpider = () => {
 
   return (
     <group ref={ref} scale={0.12}>
-      {/* Spider body */}
       <mesh position={[0, 0, 0]}>
         <sphereGeometry args={[0.5, 8, 8]} />
         <meshBasicMaterial color="#0891b2" transparent opacity={0.4} />
@@ -161,7 +216,9 @@ const CrawlingSpider = () => {
         <sphereGeometry args={[0.3, 8, 8]} />
         <meshBasicMaterial color="#0891b2" transparent opacity={0.4} />
       </mesh>
-      {/* Legs */}
+      {/* Spider eyes - code brackets < > */}
+      <Text position={[-0.15, 0.65, 0.25]} fontSize={0.2} color="#22d3ee" fillOpacity={0.7}>{'<'}</Text>
+      <Text position={[0.15, 0.65, 0.25]} fontSize={0.2} color="#22d3ee" fillOpacity={0.7}>{'>'}</Text>
       {[...Array(8)].map((_, i) => {
         const side = i < 4 ? 1 : -1;
         const idx = i % 4;
@@ -178,14 +235,63 @@ const CrawlingSpider = () => {
   );
 };
 
+const FloatingCodeSymbols = () => {
+  const groupRef = useRef<THREE.Group>(null);
+  const symbols = ['{ }', '< />', '( )', '[ ]', '=> ', '&&', '||', '!=', '++', '::'];
+
+  const symbolData = useMemo(() => {
+    return symbols.map((sym, i) => ({
+      symbol: sym,
+      position: [
+        (Math.random() - 0.5) * 10,
+        (Math.random() - 0.5) * 8,
+        -3 + Math.random() * 2,
+      ] as [number, number, number],
+      speed: 0.2 + Math.random() * 0.3,
+      offset: Math.random() * Math.PI * 2,
+    }));
+  }, []);
+
+  useFrame(({ clock }) => {
+    if (groupRef.current) {
+      groupRef.current.children.forEach((child, i) => {
+        const data = symbolData[i];
+        if (data) {
+          child.position.y = data.position[1] + Math.sin(clock.getElapsedTime() * data.speed + data.offset) * 0.5;
+        }
+      });
+    }
+  });
+
+  return (
+    <group ref={groupRef}>
+      {symbolData.map((data, i) => (
+        <Text
+          key={i}
+          position={data.position}
+          fontSize={0.18}
+          color="#0891b2"
+          fillOpacity={0.2}
+          anchorX="center"
+          anchorY="middle"
+        >
+          {data.symbol}
+        </Text>
+      ))}
+    </group>
+  );
+};
+
 const Background3D = () => {
   return (
     <div className="fixed inset-0 -z-10 pointer-events-none">
       <Canvas camera={{ position: [0, 0, 5], fov: 60 }} dpr={[1, 1.5]}>
         <ambientLight intensity={0.3} />
         <SpiderWeb />
+        <TechNodes />
         <SpiderParticles />
         <CrawlingSpider />
+        <FloatingCodeSymbols />
       </Canvas>
     </div>
   );
