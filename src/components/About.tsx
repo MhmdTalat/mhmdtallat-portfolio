@@ -2,83 +2,68 @@ import { motion } from "framer-motion";
 import { Server, Globe, Database, Code } from "lucide-react";
 
 const cards = [
-  { icon: Server, title: "Backend Dev", desc: "ASP.NET Core, Web API, EF Core, ADO.NET", color: "cyan" },
-  { icon: Globe, title: "Frontend Dev", desc: "Angular, TypeScript, JavaScript, Bootstrap", color: "green" },
-  { icon: Database, title: "Database", desc: "SQL Server, Oracle, PL/SQL, Query Optimization", color: "purple" },
-  { icon: Code, title: "Architecture", desc: "Clean Architecture, SOLID, Design Patterns", color: "amber" },
+  { icon: Server, title: "Backend Dev", desc: "ASP.NET Core, Web API, EF Core, ADO.NET" },
+  { icon: Globe, title: "Frontend Dev", desc: "Angular, TypeScript, JavaScript, Bootstrap" },
+  { icon: Database, title: "Database", desc: "SQL Server, Oracle, PL/SQL, Query Optimization" },
+  { icon: Code, title: "Architecture", desc: "Clean Architecture, SOLID, Design Patterns" },
 ];
 
-const colorMap: Record<string, string> = {
-  cyan: "from-cyan-500 to-cyan-600 shadow-cyan-500/20",
-  green: "from-emerald-500 to-emerald-600 shadow-emerald-500/20",
-  purple: "from-violet-500 to-violet-600 shadow-violet-500/20",
-  amber: "from-amber-500 to-amber-600 shadow-amber-500/20",
-};
-
-const borderMap: Record<string, string> = {
-  cyan: "hover:border-cyan-500/30",
-  green: "hover:border-emerald-500/30",
-  purple: "hover:border-violet-500/30",
-  amber: "hover:border-amber-500/30",
-};
-
 const About = () => (
-  <section id="about" className="py-20 relative">
+  <section id="about" className="py-24 relative">
     <div className="container mx-auto px-6">
       <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
+        initial={{ opacity: 0, y: 20, filter: 'blur(4px)' }}
+        whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
         className="text-center mb-16"
       >
-        <span className="text-cyan-400 font-mono text-sm mb-2 block">{"// about.me"}</span>
-        <h2 className="text-4xl font-bold text-gray-100 mb-4">About Me</h2>
-        <p className="text-gray-400 max-w-2xl mx-auto leading-relaxed">
+        <span className="text-primary font-mono text-sm mb-3 block opacity-60">{"// about.me"}</span>
+        <h2 className="text-4xl font-bold text-foreground mb-4">About Me</h2>
+        <p className="text-muted-foreground max-w-2xl mx-auto leading-relaxed">
           Full Stack Developer with a strong back-end focus using .NET technologies.
           3+ years of expertise in building scalable web services, microservices, and data-driven applications.
-          Skilled in integrating payment gateways, applying clean architecture principles, and optimizing system performance.
         </p>
       </motion.div>
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
         {cards.map((card, i) => (
           <motion.div
             key={card.title}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: i * 0.1 }}
-            whileHover={{ y: -6 }}
-            className={`bg-gray-900/60 border border-gray-800 rounded-xl p-6 text-center transition-colors duration-300 ${borderMap[card.color]}`}
+            initial={{ opacity: 0, y: 20, filter: 'blur(4px)' }}
+            whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.6, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] }}
+            whileHover={{ y: -4 }}
+            className="glass glass-hover rounded-2xl p-6 text-center transition-all duration-300 group cursor-default"
           >
-            <div className={`w-14 h-14 bg-gradient-to-br ${colorMap[card.color]} rounded-xl flex items-center justify-center mx-auto mb-4 shadow-lg`}>
-              <card.icon className="w-7 h-7 text-white" />
+            <div className="w-12 h-12 bg-primary/10 border border-primary/20 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/15 group-hover:border-primary/30 transition-all duration-300 group-hover:shadow-lg group-hover:shadow-primary/10">
+              <card.icon className="w-6 h-6 text-primary" />
             </div>
-            <h3 className="text-lg font-semibold text-gray-100 mb-1">{card.title}</h3>
-            <p className="text-gray-500 text-sm font-mono">{card.desc}</p>
+            <h3 className="text-base font-semibold text-foreground mb-1">{card.title}</h3>
+            <p className="text-muted-foreground text-sm font-mono">{card.desc}</p>
           </motion.div>
         ))}
       </div>
 
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6, delay: 0.3 }}
-        className="mt-14 max-w-3xl mx-auto bg-gray-900/40 border border-gray-800 rounded-xl p-6"
+        initial={{ opacity: 0, y: 20, filter: 'blur(4px)' }}
+        whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.7, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+        className="mt-14 max-w-3xl mx-auto glass rounded-2xl p-6"
       >
         <div className="flex items-center gap-2 mb-3">
-          <div className="w-3 h-3 rounded-full bg-red-500/80" />
-          <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
-          <div className="w-3 h-3 rounded-full bg-green-500/80" />
-          <span className="ml-2 text-gray-600 text-xs font-mono">about.md</span>
+          <div className="w-3 h-3 rounded-full bg-red-500/70" />
+          <div className="w-3 h-3 rounded-full bg-yellow-500/70" />
+          <div className="w-3 h-3 rounded-full bg-green-500/70" />
+          <span className="ml-2 text-muted-foreground text-xs font-mono">about.md</span>
         </div>
-        <p className="text-gray-400 leading-relaxed text-sm font-mono">
-          <span className="text-cyan-400">currently:</span> Full Stack Developer (.NET & Angular) @ Egyptian Takaful Insurance<br />
-          <span className="text-cyan-400">building:</span> Enterprise insurance apps, 15+ RESTful endpoints, Paymob integration<br />
-          <span className="text-cyan-400">education:</span> B.Sc. Computing & Information — Arab Academy for Science & Technology (2022)<br />
-          <span className="text-cyan-400">certified:</span> Oracle Data Platform 2025 · IEEE MIUCC 2022 · ITI Front-End · CCNA (88%)
+        <p className="text-muted-foreground leading-relaxed text-sm font-mono">
+          <span className="text-primary">currently:</span> Full Stack Developer (.NET & Angular) @ Egyptian Takaful Insurance<br />
+          <span className="text-primary">building:</span> Enterprise insurance apps, 15+ RESTful endpoints, Paymob integration<br />
+          <span className="text-primary">education:</span> B.Sc. Computing & Information — Arab Academy for Science & Technology (2022)<br />
+          <span className="text-primary">certified:</span> Oracle Data Platform 2025 · IEEE MIUCC 2022 · ITI Front-End · CCNA (88%)
         </p>
       </motion.div>
     </div>

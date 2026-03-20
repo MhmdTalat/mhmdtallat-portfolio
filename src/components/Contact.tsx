@@ -21,42 +21,42 @@ const Contact = () => {
   };
 
   const contactInfo = [
-    { icon: Mail, label: "Email", value: "muhammedtallat4@gmail.com", color: "from-cyan-500 to-blue-500" },
-    { icon: Phone, label: "Phone", value: "+201028182637", color: "from-emerald-500 to-green-500" },
-    { icon: MapPin, label: "Location", value: "Nasr City, Cairo, Egypt", color: "from-violet-500 to-purple-500" },
+    { icon: Mail, label: "Email", value: "muhammedtallat4@gmail.com" },
+    { icon: Phone, label: "Phone", value: "+201028182637" },
+    { icon: MapPin, label: "Location", value: "Nasr City, Cairo, Egypt" },
   ];
 
   return (
-    <section id="contact" className="py-20 relative">
+    <section id="contact" className="py-24 relative">
       <div className="container mx-auto px-6">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          initial={{ opacity: 0, y: 20, filter: 'blur(4px)' }}
+          whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
           className="text-center mb-16"
         >
-          <span className="text-cyan-400 font-mono text-sm mb-2 block">{"// contact.send()"}</span>
-          <h2 className="text-4xl font-bold text-gray-100 mb-4">Get In Touch</h2>
-          <p className="text-gray-400">Let's discuss your next project or collaboration</p>
+          <span className="text-primary font-mono text-sm mb-3 block opacity-60">{"// contact.send()"}</span>
+          <h2 className="text-4xl font-bold text-foreground mb-4">Get In Touch</h2>
+          <p className="text-muted-foreground">Let's discuss your next project or collaboration</p>
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            initial={{ opacity: 0, x: -20, filter: 'blur(4px)' }}
+            whileInView={{ opacity: 1, x: 0, filter: 'blur(0px)' }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
           >
             <div className="space-y-5 mb-8">
-              {contactInfo.map(({ icon: Icon, label, value, color }) => (
+              {contactInfo.map(({ icon: Icon, label, value }) => (
                 <div key={label} className="flex items-center gap-4 group">
-                  <div className={`w-11 h-11 bg-gradient-to-br ${color} rounded-lg flex items-center justify-center shadow-lg`}>
-                    <Icon className="w-5 h-5 text-white" />
+                  <div className="w-11 h-11 bg-primary/10 border border-primary/20 rounded-xl flex items-center justify-center group-hover:bg-primary/15 group-hover:border-primary/30 transition-all duration-300">
+                    <Icon className="w-5 h-5 text-primary" />
                   </div>
                   <div>
-                    <span className="text-xs font-mono text-gray-600 uppercase">{label}</span>
-                    <p className="text-gray-300 text-sm">{value}</p>
+                    <span className="text-xs font-mono text-muted-foreground uppercase">{label}</span>
+                    <p className="text-foreground/80 text-sm">{value}</p>
                   </div>
                 </div>
               ))}
@@ -72,7 +72,7 @@ const Contact = () => {
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-lg bg-gray-900 border border-gray-800 flex items-center justify-center text-gray-500 hover:text-cyan-400 hover:border-cyan-500/30 transition-all duration-300 hover:scale-105"
+                  className="w-10 h-10 rounded-xl bg-white/5 border border-border flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/30 transition-all duration-300 active:scale-95"
                 >
                   <Icon size={18} />
                 </a>
@@ -81,17 +81,17 @@ const Contact = () => {
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="bg-gray-900/60 border border-gray-800 rounded-xl p-6"
+            initial={{ opacity: 0, x: 20, filter: 'blur(4px)' }}
+            whileInView={{ opacity: 1, x: 0, filter: 'blur(0px)' }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+            className="glass rounded-2xl p-6"
           >
             <div className="flex items-center gap-2 mb-5">
-              <div className="w-3 h-3 rounded-full bg-red-500/80" />
-              <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
-              <div className="w-3 h-3 rounded-full bg-green-500/80" />
-              <span className="ml-2 text-gray-600 text-xs font-mono">message.new</span>
+              <div className="w-3 h-3 rounded-full bg-red-500/70" />
+              <div className="w-3 h-3 rounded-full bg-yellow-500/70" />
+              <div className="w-3 h-3 rounded-full bg-green-500/70" />
+              <span className="ml-2 text-muted-foreground text-xs font-mono">message.new</span>
             </div>
 
             <form onSubmit={handleSubmit} className="space-y-4">
@@ -101,7 +101,7 @@ const Contact = () => {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="bg-gray-950 border-gray-800 text-gray-200 placeholder-gray-600 font-mono text-sm focus:border-cyan-500/50"
+                className="bg-background/50 border-border text-foreground placeholder-muted-foreground font-mono text-sm focus:border-primary/50 rounded-xl"
               />
               <Input
                 name="email"
@@ -110,7 +110,7 @@ const Contact = () => {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="bg-gray-950 border-gray-800 text-gray-200 placeholder-gray-600 font-mono text-sm focus:border-cyan-500/50"
+                className="bg-background/50 border-border text-foreground placeholder-muted-foreground font-mono text-sm focus:border-primary/50 rounded-xl"
               />
               <Textarea
                 name="message"
@@ -119,11 +119,11 @@ const Contact = () => {
                 value={formData.message}
                 onChange={handleChange}
                 required
-                className="bg-gray-950 border-gray-800 text-gray-200 placeholder-gray-600 font-mono text-sm focus:border-cyan-500/50 resize-none"
+                className="bg-background/50 border-border text-foreground placeholder-muted-foreground font-mono text-sm focus:border-primary/50 resize-none rounded-xl"
               />
               <Button
                 type="submit"
-                className="w-full bg-cyan-500 hover:bg-cyan-400 text-gray-950 font-mono font-bold shadow-lg shadow-cyan-500/20 hover:shadow-cyan-500/40 transition-all"
+                className="w-full bg-primary hover:bg-indigo-500 text-primary-foreground font-mono font-semibold shadow-lg shadow-primary/20 hover:shadow-primary/30 transition-all active:scale-[0.97] rounded-xl"
               >
                 <Send size={16} className="mr-2" />
                 send_message()
@@ -133,9 +133,8 @@ const Contact = () => {
         </div>
       </div>
 
-      {/* Footer */}
-      <div className="container mx-auto px-6 mt-20 pt-8 border-t border-gray-800/50">
-        <p className="text-center text-gray-600 text-xs font-mono">
+      <div className="container mx-auto px-6 mt-20 pt-8 border-t border-border/50">
+        <p className="text-center text-muted-foreground text-xs font-mono">
           © 2024 Muhammed Tallat · Built with passion and lots of ☕
         </p>
       </div>
