@@ -109,7 +109,7 @@ const HolographicPanel = ({ position, rotation, code, color, delay = 0 }: {
             anchorX="left"
             anchorY="middle"
             fillOpacity={0.8}
-            font="/fonts/JetBrainsMono-Regular.woff"
+            
           >
             {line}
           </Text>
