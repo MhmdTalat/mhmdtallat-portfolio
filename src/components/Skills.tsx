@@ -8,7 +8,7 @@ const skills = [
   { name: "Web API / REST", level: 90 },
   { name: "SQL Server", level: 85 },
   { name: "Angular / TypeScript", level: 78 },
-  { name: "Python", level: 75 },
+  { name: "Python / Django", level: 78 },
   { name: "Clean Architecture", level: 85 },
   { name: "Docker / CI/CD", level: 70 },
   { name: "Git / GitHub", level: 88 },
@@ -16,7 +16,7 @@ const skills = [
 
 const techCategories = [
   { label: "Languages", techs: ["C#", "C++", "Python", "JavaScript", "TypeScript"] },
-  { label: "Backend", techs: ["ASP.NET Core", "Web API", "Entity Framework Core", "ADO.NET", "LINQ", "Dependency Injection", "JWT", "RESTful APIs", "Microservices"] },
+  { label: "Backend", techs: ["ASP.NET Core", "Web API", "Entity Framework Core", "Django", "Django REST Framework", "ADO.NET", "LINQ", "Dependency Injection", "JWT", "RESTful APIs", "Microservices"] },
   { label: "Frontend", techs: ["Angular", "TypeScript", "HTML5", "CSS3", "Bootstrap", "JavaScript"] },
   { label: "Databases", techs: ["SQL Server", "Oracle", "PL/SQL", "Query Optimization", "Stored Procedures", "Database Design"] },
   { label: "Architecture", techs: ["Clean Architecture", "SOLID", "OOP", "Design Patterns", "Microservices"] },
