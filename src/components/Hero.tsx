@@ -155,8 +155,9 @@ const Hero = () => {
               <a
                 key={label}
                 href={href}
-                target={href.startsWith("mailto") ? undefined : "_blank"}
+                target={href.startsWith("mailto") || href.endsWith(".pdf") ? undefined : "_blank"}
                 rel="noopener noreferrer"
+                download={href.endsWith(".pdf") ? "Muhammed_Tallat_CV.pdf" : undefined}
                 className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:text-indigo-300 hover:border-indigo-500/30 hover:bg-white/10 transition-all duration-300 active:scale-95 backdrop-blur-sm"
               >
                 <Icon size={17} />
