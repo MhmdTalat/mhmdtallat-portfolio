@@ -12,8 +12,19 @@ import imgPharmacy from "@/assets/project-pharmacy.jpg";
 import imgEmailCleaner from "@/assets/project-email-cleaner.jpg";
 import imgOcrId from "@/assets/project-ocr-id.jpg";
 import imgTodo from "@/assets/project-todo.jpg";
+import imgDjango from "@/assets/project-django.jpg";
 
 const projects = [
+  {
+    title: "Django REST API Platform",
+    description: "Full-featured REST API built with Django & Django REST Framework. Includes JWT authentication, CRUD operations, filtering, pagination, and Swagger docs.",
+    technologies: ["Django", "Django REST Framework", "Python", "PostgreSQL", "JWT", "Swagger"],
+    githubUrl: "https://github.com/MhmdTalat",
+    liveUrl: "#",
+    featured: true,
+    language: "Python",
+    image: imgDjango,
+  },
   {
     title: "Deep Fake Media Detection",
     description: "Graduation project: Mobile app & web platform for detecting deep fake media. 89.35 AUROC using CRNN. Published in IEEE MIUCC 2022.",
