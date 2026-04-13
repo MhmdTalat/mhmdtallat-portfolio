@@ -43,7 +43,7 @@ const Experience = () => (
         transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
         className="text-center mb-16"
       >
-        <span className="text-primary font-mono text-sm mb-3 block opacity-60">{"// career.timeline()"}</span>
+        
         <h2 className="text-4xl font-bold text-foreground mb-4">Experience</h2>
       </motion.div>
 

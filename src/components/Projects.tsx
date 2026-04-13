@@ -140,7 +140,7 @@ const Projects = () => (
         transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
         className="text-center mb-16"
       >
-        <span className="text-primary font-mono text-sm mb-3 block opacity-60">{"// github.repos.list()"}</span>
+        
         <h2 className="text-4xl font-bold text-foreground mb-4">All Projects</h2>
         <p className="text-muted-foreground">
           {projects.length} repositories · Full-stack apps, APIs, AI & Computer Vision
