@@ -150,7 +150,7 @@ const Hero = () => {
               { href: "https://www.linkedin.com/in/muhammed-tallat-a440881b7/", icon: Linkedin, label: "LinkedIn" },
               { href: "https://github.com/MhmdTalat", icon: Github, label: "GitHub" },
               { href: "mailto:muhammedtallat4@gmail.com", icon: Mail, label: "Email" },
-              { href: "https://drive.google.com/uc?export=download&id=1NKpkMYvaNyn7LXCiV1Bbc5SDWrHCIa7V", icon: Download, label: "Download CV" },
+              { href: "/Muhammed_Tallat_CV.pdf", icon: Download, label: "Download CV" },
             ].map(({ href, icon: Icon, label }) => (
               <a
                 key={label}
